@@ -5,30 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Амалия Ахмедова — Graphic Designer & Web Developer</title>
-<meta name="description" content="Амалия Ахмедова — Graphic Designer, Web Developer и UI/UX Specialist. Сайты, брендинг, digital-дизайн, презентации, публикации и визуальные системы.">
 
-<!-- ПРЕМИАЛЬНЫЕ ШРИФТЫ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================================================
-   BASE
+   COLORS
 ========================================================= */
 
 :root{
     --white:#ffffff;
-    --ivory:#fbfaf7;
-    --navy:#071a33;
-    --navy2:#0d2747;
-    --gold:#c79a45;
-    --gold2:#e0bd74;
-    --gold-dark:#9c6f26;
-    --line:rgba(199,154,69,.32);
-    --muted:#657080;
+
+    --black:#0b0b0b;
+    --black2:#171717;
+
+    --gold:#c99b3f;
+    --gold-light:#e8c56d;
+    --gold-dark:#9e7225;
+
+    --grey:#707070;
+
+    --line:rgba(201,155,63,.34);
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     margin:0;
@@ -41,20 +48,21 @@ html{
 }
 
 body{
-    background:#fff;
-    color:var(--navy);
-    font-family:"Manrope",sans-serif;
+    background:#ffffff;
+    color:var(--black);
+
+    font-family:"Manrope",Arial,sans-serif;
+
     overflow-x:hidden;
 }
 
-::selection{
-    background:var(--gold);
-    color:white;
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
+button{
+    font-family:inherit;
 }
 
 img{
@@ -62,149 +70,230 @@ img{
     max-width:100%;
 }
 
-button{
-    font:inherit;
+::selection{
+    background:var(--gold);
+    color:white;
 }
+
 
 .container{
-    width:min(1380px,92%);
+    width:min(1400px,92%);
     margin:auto;
-}
-
-.serif{
-    font-family:"Cormorant Garamond",serif;
-}
-
-.gold{
-    color:var(--gold);
 }
 
 
 /* =========================================================
-   CURSOR GLOW
+   GOLD CURSOR GLOW
 ========================================================= */
 
-.cursor-glow{
-    width:380px;
-    height:380px;
+.cursor-light{
+
     position:fixed;
+
+    width:420px;
+    height:420px;
+
     border-radius:50%;
-    background:radial-gradient(circle,rgba(199,154,69,.10),transparent 68%);
+
     pointer-events:none;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(201,155,63,.12),
+        rgba(201,155,63,.04) 30%,
+        transparent 70%
+    );
+
     transform:translate(-50%,-50%);
+
     z-index:0;
 }
 
 
 /* =========================================================
-   TOP NAV
+   NAVIGATION
 ========================================================= */
 
-.nav{
+.navigation{
+
     position:fixed;
+
     top:0;
     left:0;
+
     width:100%;
-    height:86px;
-    background:rgba(255,255,255,.88);
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(199,154,69,.16);
-    z-index:999;
+    height:84px;
+
+    background:rgba(255,255,255,.93);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(201,155,63,.22);
+
+    z-index:9999;
 }
+
 
 .nav-inner{
-    width:min(1380px,92%);
+
+    width:min(1400px,92%);
+
     height:100%;
+
     margin:auto;
+
     display:flex;
-    align-items:center;
+
     justify-content:space-between;
-}
-
-.logo{
-    display:flex;
     align-items:center;
-    gap:13px;
 }
 
-.logo-mark{
-    width:46px;
-    height:46px;
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+}
+
+
+.brand-symbol{
+
+    width:49px;
+    height:49px;
+
     border:1px solid var(--gold);
+
     border-radius:50%;
+
     display:flex;
-    align-items:center;
+
     justify-content:center;
+    align-items:center;
+
     font-family:"Cormorant Garamond";
-    font-size:30px;
+    font-size:32px;
+
     color:var(--gold);
+
     transition:.4s;
 }
 
-.logo:hover .logo-mark{
-    background:var(--gold);
-    color:white;
-    transform:rotate(12deg);
+
+.brand:hover .brand-symbol{
+
+    transform:rotate(14deg);
+
+    background:var(--black);
+
+    border-color:var(--black);
+
+    color:var(--gold-light);
 }
 
-.logo-text{
+
+.brand-name{
+
     font-family:"Cormorant Garamond";
+
     font-size:21px;
+
     letter-spacing:3px;
 }
 
+
 .menu{
+
     display:flex;
+
+    gap:30px;
+
     align-items:center;
-    gap:32px;
 }
+
 
 .menu a{
-    font-size:11px;
-    letter-spacing:2px;
-    text-transform:uppercase;
+
     position:relative;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
 }
 
-.menu a:after{
+
+.menu a::after{
+
     content:"";
+
     position:absolute;
+
     left:0;
-    bottom:-7px;
+
+    bottom:-8px;
+
     width:0;
     height:1px;
+
     background:var(--gold);
+
     transition:.35s;
 }
 
-.menu a:hover:after{
+
+.menu a:hover::after{
     width:100%;
 }
 
-.top-socials{
+
+/* social top */
+
+.top-social{
+
     display:flex;
-    gap:10px;
+
+    gap:9px;
 }
 
-.social-circle{
+
+.social-icon{
+
     width:42px;
     height:42px;
+
     border:1px solid var(--line);
+
     border-radius:50%;
+
     display:flex;
-    align-items:center;
+
     justify-content:center;
-    font-size:12px;
+    align-items:center;
+
+    font-size:10px;
     font-weight:600;
+
+    letter-spacing:1px;
+
     transition:.35s;
 }
 
-.social-circle:hover{
-    color:white;
-    background:var(--navy);
-    border-color:var(--navy);
-    transform:translateY(-3px);
+
+.social-icon:hover{
+
+    background:var(--black);
+
+    border-color:var(--black);
+
+    color:var(--gold-light);
+
+    transform:translateY(-4px);
 }
 
 
@@ -213,274 +302,481 @@ button{
 ========================================================= */
 
 .hero{
+
     min-height:100vh;
-    padding:130px 0 60px;
+
+    background:#ffffff;
+
+    padding:130px 0 65px;
+
     display:flex;
+
     align-items:center;
+
     position:relative;
-    background:#fff;
+
+    overflow:hidden;
 }
 
-.hero:before{
-    content:"";
+
+.hero-circle{
+
     position:absolute;
-    right:-170px;
-    top:110px;
-    width:500px;
-    height:500px;
-    border:1px solid rgba(199,154,69,.18);
+
+    width:650px;
+    height:650px;
+
+    border:1px solid rgba(201,155,63,.16);
+
     border-radius:50%;
+
+    right:-310px;
+
+    top:120px;
 }
+
+
+.hero-circle::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    border:1px solid rgba(201,155,63,.12);
+
+    border-radius:50%;
+
+    top:110px;
+    left:110px;
+}
+
 
 .hero-grid{
+
     display:grid;
-    grid-template-columns:1.03fr .92fr;
-    gap:75px;
+
+    grid-template-columns:1.05fr .95fr;
+
+    gap:85px;
+
     align-items:center;
 }
 
+
 .hero-copy{
+
     position:relative;
+
     z-index:2;
 }
 
-.eyebrow{
+
+.hero-label{
+
     display:flex;
+
     align-items:center;
-    gap:15px;
-    margin-bottom:25px;
-    font-size:11px;
-    letter-spacing:4px;
-    text-transform:uppercase;
+
+    gap:16px;
+
+    margin-bottom:27px;
+
     color:var(--gold-dark);
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
 }
 
-.eyebrow:before{
+
+.hero-label::before{
+
     content:"";
-    width:50px;
+
+    width:55px;
     height:1px;
+
     background:var(--gold);
 }
 
+
 .hero h1{
-    font-family:"Cormorant Garamond",serif;
+
+    font-family:"Cormorant Garamond";
+
     font-weight:400;
-    font-size:clamp(72px,8.1vw,135px);
-    line-height:.77;
+
+    font-size:clamp(76px,8.4vw,145px);
+
+    line-height:.75;
+
     letter-spacing:-4px;
-    margin-bottom:38px;
 }
 
+
 .hero h1 span{
+
     display:block;
+
     color:var(--gold);
+
     font-style:italic;
+
     margin-left:75px;
 }
 
-.hero-role{
-    font-family:"Cormorant Garamond",serif;
-    font-size:25px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    margin-bottom:23px;
-}
 
-.hero-sub{
-    max-width:620px;
-    font-size:14px;
-    line-height:1.9;
-    color:#596574;
-}
+.profession{
 
-.hero-actions{
     margin-top:40px;
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
+
+    font-family:"Cormorant Garamond";
+
+    font-size:24px;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
 }
 
-.btn{
+
+.hero-text{
+
+    margin-top:23px;
+
+    max-width:630px;
+
+    color:#636363;
+
+    font-size:13px;
+
+    line-height:1.95;
+}
+
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:13px;
+
+    margin-top:40px;
+}
+
+
+.button{
+
     min-height:58px;
+
     padding:0 29px;
+
+    border:1px solid var(--black);
+
     display:inline-flex;
+
     align-items:center;
     justify-content:center;
+
     gap:14px;
-    border:1px solid var(--navy);
-    font-size:11px;
+
+    font-size:10px;
+
     letter-spacing:2px;
+
     text-transform:uppercase;
-    transition:.35s;
+
+    transition:.4s;
 }
 
-.btn-dark{
-    background:var(--navy);
-    color:#fff;
-}
 
-.btn-dark:hover{
-    background:var(--gold);
-    border-color:var(--gold);
-    transform:translateY(-4px);
-    box-shadow:0 14px 30px rgba(7,26,51,.15);
-}
+.button-black{
 
-.btn-light:hover{
-    background:var(--navy);
+    background:var(--black);
+
     color:white;
-    transform:translateY(-4px);
+}
+
+
+.button-black:hover{
+
+    background:var(--gold);
+
+    border-color:var(--gold);
+
+    color:white;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.12);
+}
+
+
+.button-white:hover{
+
+    background:var(--black);
+
+    color:white;
+
+    transform:translateY(-5px);
 }
 
 
 /* PHOTO */
 
-.hero-photo-wrap{
+.hero-photo-holder{
+
     position:relative;
-    padding:22px;
+
+    padding:20px 28px 38px 0;
 }
 
-.hero-photo-wrap:before{
+
+.hero-photo-holder::before{
+
     content:"";
+
     position:absolute;
-    inset:0 50px 55px 0;
+
+    left:20px;
+    top:0;
+
+    right:0;
+    bottom:55px;
+
     border:1px solid var(--gold);
-    z-index:0;
 }
+
 
 .hero-photo{
-    height:710px;
-    overflow:hidden;
+
+    height:720px;
+
     position:relative;
-    z-index:1;
-    background:#eee;
+
+    overflow:hidden;
+
+    z-index:2;
+
+    background:white;
 }
 
+
 .hero-photo img{
+
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     object-position:center;
-    transition:transform 1.2s cubic-bezier(.2,.8,.2,1);
+
+    transition:transform 1.3s cubic-bezier(.2,.8,.2,1);
 }
+
 
 .hero-photo:hover img{
     transform:scale(1.025);
 }
 
-.photo-badge{
+
+.photo-sign{
+
     position:absolute;
-    z-index:4;
-    right:-8px;
-    bottom:85px;
-    width:165px;
-    height:165px;
-    background:white;
-    border:1px solid var(--gold);
+
+    z-index:5;
+
+    right:-6px;
+    bottom:20px;
+
+    width:155px;
+    height:155px;
+
     border-radius:50%;
+
+    background:white;
+
+    border:1px solid var(--gold);
+
     display:flex;
+
     flex-direction:column;
-    align-items:center;
+
     justify-content:center;
-    text-align:center;
-    box-shadow:0 20px 60px rgba(7,26,51,.08);
+    align-items:center;
+
+    box-shadow:0 18px 50px rgba(0,0,0,.09);
 }
 
-.photo-badge strong{
+
+.photo-sign strong{
+
     font-family:"Cormorant Garamond";
+
+    font-size:56px;
+
+    line-height:.75;
+
     color:var(--gold);
-    font-size:55px;
-    line-height:.8;
+
     font-weight:400;
 }
 
-.photo-badge span{
-    margin-top:11px;
+
+.photo-sign span{
+
+    margin-top:12px;
+
     font-size:8px;
-    line-height:1.6;
+
     letter-spacing:2px;
+
     text-transform:uppercase;
+
+    text-align:center;
+
+    line-height:1.6;
 }
 
 
 /* =========================================================
-   MARQUEE
+   RUNNING LINE
 ========================================================= */
 
 .marquee{
-    overflow:hidden;
-    background:var(--navy);
+
+    background:#000000;
+
     color:white;
+
+    overflow:hidden;
+
     padding:18px 0;
+
+    border-top:1px solid var(--gold-dark);
+
+    border-bottom:1px solid var(--gold-dark);
 }
+
 
 .marquee-track{
-    width:max-content;
+
     display:flex;
-    animation:marquee 25s linear infinite;
+
+    width:max-content;
+
+    animation:marqueeMove 27s linear infinite;
 }
 
-.marquee-item{
-    font-family:"Cormorant Garamond";
-    font-size:21px;
-    letter-spacing:3px;
-    text-transform:uppercase;
+
+.marquee-content{
+
     white-space:nowrap;
+
+    font-family:"Cormorant Garamond";
+
+    font-size:21px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
 }
 
-.marquee-item span{
-    color:var(--gold2);
+
+.marquee-content i{
+
+    color:var(--gold-light);
+
     margin:0 28px;
 }
 
-@keyframes marquee{
-    from{transform:translateX(0)}
-    to{transform:translateX(-50%)}
+
+@keyframes marqueeMove{
+
+    to{
+        transform:translateX(-50%);
+    }
+
 }
 
 
 /* =========================================================
-   SECTION HEADINGS
+   COMMON SECTION
 ========================================================= */
 
 .section{
+
     padding:120px 0;
+
+    background:#ffffff;
 }
 
-.section-label{
-    font-size:10px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    color:var(--gold-dark);
-    margin-bottom:18px;
+
+.section-heading{
+
+    margin-bottom:65px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    gap:45px;
 }
+
+
+.section-number{
+
+    color:var(--gold-dark);
+
+    font-size:9px;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    margin-bottom:16px;
+}
+
 
 .section-title{
+
     font-family:"Cormorant Garamond";
-    font-size:clamp(55px,6vw,94px);
-    line-height:.92;
+
     font-weight:400;
+
+    font-size:clamp(55px,6vw,94px);
+
+    line-height:.9;
+
     letter-spacing:-2px;
 }
 
+
 .section-title em{
+
     color:var(--gold);
+
     font-weight:400;
 }
 
-.section-head{
-    display:flex;
-    align-items:flex-end;
-    justify-content:space-between;
-    gap:30px;
-    margin-bottom:65px;
-}
 
-.section-note{
-    max-width:360px;
-    font-size:12px;
-    line-height:1.8;
-    color:var(--muted);
+.section-description{
+
+    max-width:400px;
+
+    font-size:11px;
+
+    line-height:1.9;
+
+    color:#737373;
 }
 
 
@@ -488,51 +784,79 @@ button{
    SERVICES
 ========================================================= */
 
-.services{
-    background:#fff;
-}
-
 .services-list{
+
     border-top:1px solid var(--line);
 }
 
+
 .service{
-    display:grid;
-    grid-template-columns:80px 1fr 1.2fr 50px;
-    gap:25px;
-    align-items:center;
-    padding:25px 8px;
+
+    min-height:96px;
+
     border-bottom:1px solid var(--line);
+
+    display:grid;
+
+    grid-template-columns:75px 1fr 1.1fr 45px;
+
+    align-items:center;
+
+    gap:25px;
+
+    padding:15px 7px;
+
     transition:.4s;
 }
 
+
 .service:hover{
-    padding-left:24px;
-    background:linear-gradient(90deg,rgba(199,154,69,.055),transparent);
+
+    padding-left:25px;
+
+    background:#ffffff;
+
+    box-shadow:inset 4px 0 0 var(--gold);
 }
 
-.service-num{
+
+.service-number{
+
     font-family:"Cormorant Garamond";
-    font-size:22px;
+
+    font-size:21px;
+
     color:var(--gold);
 }
 
-.service-name{
+
+.service-title{
+
     font-family:"Cormorant Garamond";
-    font-size:30px;
+
+    font-size:29px;
 }
 
-.service-desc{
-    font-size:12px;
-    color:var(--muted);
-    line-height:1.7;
+
+.service-description{
+
+    font-size:11px;
+
+    line-height:1.75;
+
+    color:#767676;
 }
+
 
 .service-arrow{
-    font-size:24px;
+
+    font-size:23px;
+
     color:var(--gold);
+
     transition:.3s;
 }
+
 
 .service:hover .service-arrow{
     transform:translateX(8px);
@@ -544,239 +868,375 @@ button{
 ========================================================= */
 
 .portfolio{
-    background:var(--ivory);
+
+    background:#ffffff;
 }
 
-.works{
+
+.projects{
+
     display:grid;
+
     grid-template-columns:repeat(12,1fr);
-    gap:24px;
+
+    gap:22px;
 }
 
-.work{
+
+.project{
+
     position:relative;
-    background:white;
-    min-height:420px;
-    border:1px solid rgba(199,154,69,.2);
+
+    border:1px solid var(--line);
+
+    background:#ffffff;
+
     overflow:hidden;
+
     transition:.45s;
 }
 
-.work:hover{
+
+.project:hover{
+
     transform:translateY(-8px);
-    box-shadow:0 25px 70px rgba(7,26,51,.09);
+
+    box-shadow:0 30px 70px rgba(0,0,0,.09);
 }
 
-.work:nth-child(1){
+
+.project:nth-child(1){
     grid-column:span 7;
 }
 
-.work:nth-child(2){
+
+.project:nth-child(2){
     grid-column:span 5;
 }
 
-.work:nth-child(3),
-.work:nth-child(4){
+
+.project:nth-child(3),
+.project:nth-child(4){
     grid-column:span 6;
 }
 
-.work:nth-child(5){
+
+.project:nth-child(5){
     grid-column:span 5;
 }
 
-.work:nth-child(6){
+
+.project:nth-child(6){
     grid-column:span 7;
 }
 
-.work-visual{
-    height:310px;
-    background:#f1eee8;
+
+.project-image{
+
+    height:390px;
+
+    background:white;
+
     overflow:hidden;
-    position:relative;
 }
 
-.work-visual img{
+
+.project-image img{
+
     width:100%;
     height:100%;
+
     object-fit:cover;
-    transition:.7s;
+
+    transition:.8s;
 }
 
-.work:hover img{
-    transform:scale(1.035);
+
+.project:hover img{
+    transform:scale(1.025);
 }
 
-.work-pdf{
-    height:310px;
+
+.project-content{
+
+    padding:25px 27px 29px;
+}
+
+
+.project-category{
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    color:var(--gold-dark);
+
+    font-size:8px;
+}
+
+
+.project-name{
+
+    margin-top:8px;
+
+    font-family:"Cormorant Garamond";
+
+    font-size:30px;
+}
+
+
+/* PDF */
+
+.project-pdf{
+
+    height:390px;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
-    position:relative;
-    background:
-    linear-gradient(135deg,#071a33,#102b4d);
+
+    background:#000000;
+
     color:white;
-}
 
-.work-pdf:before{
-    content:"A";
-    position:absolute;
-    font-family:"Cormorant Garamond";
-    font-size:260px;
-    color:rgba(199,154,69,.08);
-}
-
-.pdf-center{
     position:relative;
+
+    overflow:hidden;
+}
+
+
+.project-pdf::before{
+
+    content:"A";
+
+    position:absolute;
+
+    font-family:"Cormorant Garamond";
+
+    font-size:300px;
+
+    color:rgba(201,155,63,.09);
+}
+
+
+.project-pdf-content{
+
+    position:relative;
+
     z-index:2;
+
     text-align:center;
 }
 
-.pdf-center span{
+
+.project-pdf-content small{
+
     display:block;
-    color:var(--gold2);
-    font-size:10px;
+
+    color:var(--gold-light);
+
     letter-spacing:4px;
+
     text-transform:uppercase;
+
+    font-size:8px;
 }
 
-.pdf-center strong{
+
+.project-pdf-content strong{
+
     display:block;
-    margin-top:14px;
+
+    margin-top:15px;
+
     font-family:"Cormorant Garamond";
-    font-size:42px;
+
+    font-size:44px;
+
     font-weight:400;
+
+    line-height:1;
 }
 
-.work-info{
-    padding:25px 27px 28px;
-}
 
-.work-type{
-    color:var(--gold-dark);
-    text-transform:uppercase;
-    letter-spacing:3px;
-    font-size:9px;
-}
+.project-link{
 
-.work-title{
-    font-family:"Cormorant Garamond";
-    font-size:29px;
-    margin-top:8px;
-}
-
-.work-link{
     position:absolute;
+
     inset:0;
-    z-index:5;
+
+    z-index:10;
 }
 
 
 /* =========================================================
-   PRICES
+   PRICING
 ========================================================= */
 
-.prices{
-    background:#fff;
-}
+.price-list{
 
-.price-table{
     border-top:1px solid var(--line);
 }
 
-.price-row{
+
+.price{
+
     display:grid;
-    grid-template-columns:1.8fr .6fr .6fr .6fr;
+
+    grid-template-columns:1.7fr .65fr .65fr .65fr;
+
+    min-height:75px;
+
     align-items:center;
-    min-height:77px;
+
     border-bottom:1px solid var(--line);
-    transition:.3s;
+
+    transition:.35s;
 }
 
-.price-row:hover{
-    background:#fcfaf5;
+
+.price:hover{
+
+    box-shadow:inset 4px 0 0 var(--gold);
 }
 
-.price-row.header{
-    min-height:50px;
-    font-size:9px;
-    text-transform:uppercase;
-    letter-spacing:3px;
+
+.price.heading{
+
+    min-height:48px;
+
     color:var(--gold-dark);
+
+    font-size:8px;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
 }
 
-.price-name{
-    padding:0 18px;
+
+.price-info{
+    padding:12px 17px;
 }
 
-.price-name strong{
+
+.price-info strong{
+
     font-family:"Cormorant Garamond";
-    font-size:22px;
+
+    font-size:21px;
+
     font-weight:500;
 }
 
-.price-name small{
+
+.price-info span{
+
     display:block;
-    color:var(--muted);
-    margin-top:3px;
-    font-size:10px;
+
+    font-size:9px;
+
+    color:#767676;
+
+    margin-top:4px;
 }
 
-.price-value{
-    border-left:1px solid var(--line);
+
+.price-number{
+
     height:100%;
+
+    border-left:1px solid var(--line);
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     font-family:"Cormorant Garamond";
-    font-size:20px;
+
+    font-size:19px;
 }
 
 
-/* CONDITIONS */
+/* special */
 
-.conditions{
-    margin-top:45px;
+.specials{
+
+    margin-top:40px;
+
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
-    gap:18px;
+
+    gap:17px;
 }
 
-.condition{
-    padding:30px;
+
+.special{
+
+    padding:29px;
+
     border:1px solid var(--line);
+
     position:relative;
+
     overflow:hidden;
 }
 
-.condition:after{
-    content:"";
-    width:80px;
-    height:80px;
-    border:1px solid var(--gold);
-    border-radius:50%;
-    position:absolute;
-    right:-35px;
-    bottom:-35px;
-}
 
-.condition strong{
+.special strong{
+
     font-family:"Cormorant Garamond";
-    font-size:35px;
-    color:var(--gold);
+
+    font-size:37px;
+
     font-weight:400;
+
+    color:var(--gold);
 }
 
-.condition h4{
-    margin:7px 0;
-    font-size:12px;
-    text-transform:uppercase;
+
+.special h4{
+
+    margin-top:5px;
+
+    font-size:10px;
+
     letter-spacing:2px;
+
+    text-transform:uppercase;
 }
 
-.condition p{
-    font-size:11px;
-    color:var(--muted);
+
+.special p{
+
+    margin-top:10px;
+
+    color:#767676;
+
     line-height:1.7;
+
+    font-size:10px;
+}
+
+
+.special::after{
+
+    content:"";
+
+    width:85px;
+    height:85px;
+
+    border:1px solid var(--gold);
+
+    border-radius:50%;
+
+    position:absolute;
+
+    right:-42px;
+    bottom:-42px;
 }
 
 
@@ -784,69 +1244,108 @@ button{
    REVIEWS
 ========================================================= */
 
-.reviews{
-    background:var(--navy);
+.reviews-section{
+
+    background:#000000;
+
     color:white;
 }
 
-.reviews .section-note{
-    color:#aeb7c2;
+
+.reviews-section .section-description{
+    color:#a8a8a8;
 }
+
 
 .review-grid{
+
     display:grid;
+
     grid-template-columns:repeat(2,1fr);
-    gap:20px;
+
+    gap:19px;
 }
+
 
 .review{
-    padding:42px;
-    border:1px solid rgba(224,189,116,.28);
-    position:relative;
-    transition:.4s;
+
     min-height:330px;
+
+    border:1px solid rgba(201,155,63,.42);
+
+    padding:38px;
+
+    transition:.4s;
 }
+
 
 .review:hover{
+
     transform:translateY(-7px);
-    background:rgba(255,255,255,.035);
-    border-color:var(--gold);
+
+    border-color:var(--gold-light);
+
+    box-shadow:0 15px 55px rgba(201,155,63,.07);
 }
 
-.quote{
+
+.review-quote{
+
     font-family:"Cormorant Garamond";
+
+    font-size:70px;
+
     color:var(--gold);
-    font-size:65px;
-    line-height:.5;
-    margin-bottom:24px;
+
+    height:43px;
 }
 
-.review-text{
+
+.review p{
+
+    margin-top:19px;
+
     font-family:"Cormorant Garamond";
-    font-size:22px;
-    line-height:1.45;
-    color:#f7f4ee;
+
+    font-size:21px;
+
+    line-height:1.47;
+
+    color:#f2f2f2;
 }
+
 
 .review-person{
-    margin-top:28px;
-    padding-top:20px;
-    border-top:1px solid rgba(255,255,255,.12);
+
+    margin-top:27px;
+
+    padding-top:18px;
+
+    border-top:1px solid rgba(255,255,255,.13);
 }
+
 
 .review-person strong{
-    display:block;
-    color:var(--gold2);
-    font-size:12px;
-    letter-spacing:2px;
+
+    color:var(--gold-light);
+
     text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-size:10px;
 }
 
+
 .review-person span{
+
     display:block;
+
     margin-top:7px;
-    color:#aeb7c2;
-    font-size:10px;
+
+    color:#979797;
+
+    font-size:9px;
 }
 
 
@@ -854,84 +1353,125 @@ button{
    FAQ
 ========================================================= */
 
-.faq{
-    background:white;
-}
+.faq-list{
 
-.faq-wrap{
     max-width:1050px;
-    margin:60px auto 0;
+
+    margin:55px auto 0;
+
     border-top:1px solid var(--line);
 }
 
+
 .faq-item{
+
     border-bottom:1px solid var(--line);
 }
 
+
 .faq-question{
+
     width:100%;
-    padding:27px 4px;
+
     border:0;
-    background:none;
-    color:var(--navy);
+
+    background:white;
+
+    color:var(--black);
+
+    padding:27px 3px;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
+    gap:20px;
+
     text-align:left;
+
     cursor:pointer;
 }
 
-.faq-question span:first-child{
+
+.question-text{
+
     font-family:"Cormorant Garamond";
+
     font-size:25px;
 }
 
-.plus{
-    width:42px;
-    height:42px;
-    flex:0 0 42px;
+
+.faq-plus{
+
+    width:43px;
+    height:43px;
+
+    flex:0 0 43px;
+
     border:1px solid var(--gold);
+
     border-radius:50%;
+
     display:flex;
-    align-items:center;
+
     justify-content:center;
+    align-items:center;
+
     color:var(--gold);
-    font-size:25px;
+
+    font-size:26px;
+
     font-weight:300;
+
     transition:.4s;
 }
 
-.faq-item.active .plus{
-    background:var(--gold);
-    color:white;
+
+.faq-item.open .faq-plus{
+
     transform:rotate(45deg);
+
+    background:var(--gold);
+
+    color:white;
 }
 
+
 .faq-answer{
+
     max-height:0;
+
     overflow:hidden;
+
     transition:max-height .55s ease;
 }
 
-.faq-answer-inner{
-    padding:0 70px 30px 4px;
-    font-size:13px;
-    color:var(--muted);
+
+.faq-answer-content{
+
+    padding:0 70px 30px 3px;
+
+    font-size:12px;
+
     line-height:1.9;
+
+    color:#707070;
 }
 
-.faq-answer ol{
+
+.faq-answer ol,
+.faq-answer ul{
+
     padding-left:20px;
-    margin-top:15px;
+
+    margin-top:12px;
 }
+
 
 .faq-answer li{
-    margin:7px 0;
-}
-
-.faq-answer ul{
-    padding-left:20px;
-    margin-top:12px;
+    margin:6px 0;
 }
 
 
@@ -940,105 +1480,179 @@ button{
 ========================================================= */
 
 .contact{
-    background:#fff;
-    padding:130px 0 70px;
+
+    padding:125px 0 55px;
+
+    background:white;
 }
+
 
 .contact-card{
-    position:relative;
-    overflow:hidden;
-    background:var(--ivory);
+
     border:1px solid var(--line);
-    padding:80px 55px;
+
+    background:#ffffff;
+
+    padding:78px 55px;
+
     text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
 }
 
-.contact-card:before{
+
+.contact-card::before{
+
     content:"A";
+
     position:absolute;
-    font-family:"Cormorant Garamond";
-    font-size:450px;
-    color:rgba(199,154,69,.045);
-    top:-100px;
+
     left:50%;
+
+    top:-125px;
+
     transform:translateX(-50%);
-}
 
-.contact-small{
-    position:relative;
-    font-size:10px;
-    letter-spacing:5px;
-    color:var(--gold-dark);
-    text-transform:uppercase;
-}
-
-.contact h2{
-    position:relative;
     font-family:"Cormorant Garamond";
-    font-size:clamp(58px,7vw,110px);
-    line-height:.9;
-    font-weight:400;
-    margin:25px 0 50px;
+
+    font-size:510px;
+
+    color:rgba(201,155,63,.055);
 }
 
-.contact h2 em{
-    color:var(--gold);
+
+.contact-label{
+
+    position:relative;
+
+    color:var(--gold-dark);
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    font-size:8px;
+}
+
+
+.contact-title{
+
+    position:relative;
+
+    margin-top:25px;
+
+    font-family:"Cormorant Garamond";
+
+    font-size:clamp(60px,7.5vw,115px);
+
+    line-height:.86;
+
     font-weight:400;
 }
+
+
+.contact-title span{
+    color:var(--gold);
+    font-style:italic;
+}
+
 
 .contact-buttons{
+
     position:relative;
+
+    max-width:1100px;
+
+    margin:55px auto 0;
+
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
-    gap:16px;
-    max-width:1050px;
-    margin:auto;
+
+    gap:14px;
 }
 
-.contact-btn{
-    min-height:115px;
-    border:1px solid var(--navy);
+
+.contact-button{
+
+    min-height:125px;
+
+    border:1px solid var(--black);
+
     display:flex;
-    align-items:center;
-    justify-content:center;
+
     flex-direction:column;
-    gap:9px;
+
+    justify-content:center;
+    align-items:center;
+
     transition:.4s;
 }
 
-.contact-btn strong{
+
+.contact-button strong{
+
     font-family:"Cormorant Garamond";
-    font-size:26px;
+
+    font-size:28px;
+
     font-weight:500;
 }
 
-.contact-btn span{
-    font-size:9px;
-    letter-spacing:2px;
+
+.contact-button span{
+
+    margin-top:7px;
+
     text-transform:uppercase;
-    color:var(--muted);
+
+    letter-spacing:2px;
+
+    color:#777;
+
+    font-size:8px;
 }
 
-.contact-btn:hover{
-    background:var(--navy);
+
+.contact-button:hover{
+
+    background:#000;
+
     color:white;
+
     transform:translateY(-7px);
-    box-shadow:0 20px 50px rgba(7,26,51,.14);
+
+    box-shadow:0 20px 55px rgba(0,0,0,.14);
 }
 
-.contact-btn:hover span{
-    color:var(--gold2);
+
+.contact-button:hover span{
+    color:var(--gold-light);
 }
 
-.email{
+
+.contact-details{
+
     position:relative;
-    margin-top:38px;
-    font-family:"Cormorant Garamond";
-    font-size:22px;
+
+    margin-top:33px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    font-size:11px;
 }
 
-.email span{
-    color:var(--gold);
+
+.contact-details strong{
+    color:var(--gold-dark);
 }
 
 
@@ -1046,1379 +1660,1761 @@ button{
    FOOTER
 ========================================================= */
 
-footer{
-    border-top:1px solid var(--line);
+.footer{
+
     padding:28px 0;
+
+    border-top:1px solid var(--line);
+
+    background:white;
 }
 
+
 .footer-inner{
-    width:min(1380px,92%);
+
+    width:min(1400px,92%);
+
     margin:auto;
+
     display:flex;
+
     justify-content:space-between;
+
     gap:20px;
-    font-size:9px;
-    text-transform:uppercase;
+
+    color:#818181;
+
+    font-size:8px;
+
     letter-spacing:2px;
-    color:#7c8490;
+
+    text-transform:uppercase;
 }
 
 
 /* =========================================================
-   REVEAL ANIMATIONS
+   ANIMATION
 ========================================================= */
 
 .reveal{
+
     opacity:0;
-    transform:translateY(45px);
+
+    transform:translateY(42px);
+
     transition:
-        opacity .85s cubic-bezier(.2,.8,.2,1),
-        transform .85s cubic-bezier(.2,.8,.2,1);
+    opacity .85s ease,
+    transform .85s cubic-bezier(.16,.8,.2,1);
 }
 
-.reveal.visible{
+
+.reveal.active{
+
     opacity:1;
+
     transform:none;
 }
 
-.delay1{transition-delay:.1s}
-.delay2{transition-delay:.2s}
-.delay3{transition-delay:.3s}
+
+.delay1{
+    transition-delay:.10s;
+}
+
+
+.delay2{
+    transition-delay:.20s;
+}
+
+
+.delay3{
+    transition-delay:.30s;
+}
 
 
 /* =========================================================
-   MOBILE
+   PHONE
 ========================================================= */
 
 @media(max-width:950px){
 
-    .nav{
-        height:70px;
-    }
 
-    .menu{
-        display:none;
-    }
-
-    .logo-text{
-        font-size:17px;
-    }
-
-    .hero{
-        padding-top:105px;
-    }
-
-    .hero-grid{
-        grid-template-columns:1fr;
-        gap:40px;
-    }
-
-    .hero-copy{
-        order:1;
-    }
-
-    .hero-photo-wrap{
-        order:2;
-        padding:10px 15px 30px 0;
-    }
-
-    .hero h1{
-        font-size:clamp(65px,19vw,105px);
-        line-height:.8;
-    }
-
-    .hero h1 span{
-        margin-left:30px;
-    }
-
-    .hero-role{
-        font-size:17px;
-        line-height:1.5;
-    }
-
-    .hero-photo{
-        height:620px;
-    }
-
-    .photo-badge{
-        width:125px;
-        height:125px;
-        right:-3px;
-        bottom:0;
-    }
-
-    .photo-badge strong{
-        font-size:42px;
-    }
-
-    .section{
-        padding:85px 0;
-    }
-
-    .section-head{
-        display:block;
-        margin-bottom:40px;
-    }
-
-    .section-note{
-        margin-top:20px;
-    }
-
-    .service{
-        grid-template-columns:45px 1fr 30px;
-        gap:12px;
-    }
-
-    .service-desc{
-        grid-column:2/3;
-    }
-
-    .service-name{
-        font-size:24px;
-    }
-
-    .works{
-        display:block;
-    }
-
-    .work{
-        margin-bottom:18px;
-    }
-
-    .price-row{
-        grid-template-columns:1.6fr .7fr;
-    }
-
-    .price-row > :nth-child(3),
-    .price-row > :nth-child(4){
-        display:none;
-    }
-
-    .conditions{
-        grid-template-columns:1fr;
-    }
-
-    .review-grid{
-        grid-template-columns:1fr;
-    }
-
-    .review{
-        padding:30px 24px;
-    }
-
-    .contact-card{
-        padding:65px 20px;
-    }
-
-    .contact-buttons{
-        grid-template-columns:1fr;
-    }
-
-    .footer-inner{
-        flex-direction:column;
-        text-align:center;
-        align-items:center;
-    }
+.navigation{
+    height:70px;
 }
+
+
+.menu{
+    display:none;
+}
+
+
+.brand-name{
+    font-size:17px;
+}
+
+
+.brand-symbol{
+
+    width:44px;
+    height:44px;
+
+    font-size:28px;
+}
+
+
+.social-icon{
+
+    width:38px;
+    height:38px;
+}
+
+
+/* HERO */
+
+.hero{
+
+    min-height:auto;
+
+    padding-top:105px;
+}
+
+
+.hero-grid{
+
+    grid-template-columns:1fr;
+
+    gap:45px;
+}
+
+
+.hero h1{
+
+    font-size:clamp(68px,19vw,110px);
+}
+
+
+.hero h1 span{
+
+    margin-left:30px;
+}
+
+
+.profession{
+
+    font-size:17px;
+
+    line-height:1.5;
+
+    letter-spacing:2.5px;
+}
+
+
+.hero-photo-holder{
+
+    padding:10px 12px 35px 0;
+}
+
+
+.hero-photo{
+    height:650px;
+}
+
+
+.photo-sign{
+
+    width:125px;
+    height:125px;
+
+    right:-3px;
+
+    bottom:0;
+}
+
+
+.photo-sign strong{
+    font-size:43px;
+}
+
+
+/* common */
+
+.section{
+    padding:85px 0;
+}
+
+
+.section-heading{
+
+    display:block;
+
+    margin-bottom:40px;
+}
+
+
+.section-description{
+
+    margin-top:19px;
+}
+
+
+/* services */
+
+.service{
+
+    grid-template-columns:45px 1fr 30px;
+
+    gap:10px;
+}
+
+
+.service-description{
+
+    grid-column:2/3;
+
+    margin-top:5px;
+}
+
+
+/* projects */
+
+.projects{
+    display:block;
+}
+
+
+.project{
+    margin-bottom:20px;
+}
+
+
+.project-image,
+.project-pdf{
+    height:420px;
+}
+
+
+/* pricing */
+
+.price{
+
+    grid-template-columns:1.55fr .7fr;
+}
+
+
+.price > :nth-child(3),
+.price > :nth-child(4){
+
+    display:none;
+}
+
+
+.specials{
+
+    grid-template-columns:1fr;
+}
+
+
+/* review */
+
+.review-grid{
+
+    grid-template-columns:1fr;
+}
+
+
+/* contact */
+
+.contact-card{
+
+    padding:65px 22px;
+}
+
+
+.contact-buttons{
+
+    grid-template-columns:1fr;
+}
+
+
+.footer-inner{
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+}
+
+}
+
 
 @media(max-width:520px){
 
-    .container{
-        width:90%;
-    }
 
-    .logo-text{
-        display:none;
-    }
+.container{
+    width:90%;
+}
 
-    .social-circle{
-        width:39px;
-        height:39px;
-    }
 
-    .hero{
-        min-height:auto;
-        padding-bottom:55px;
-    }
+.brand-name{
+    display:none;
+}
 
-    .eyebrow{
-        font-size:9px;
-        letter-spacing:2.5px;
-    }
 
-    .hero h1{
-        font-size:65px;
-        letter-spacing:-2px;
-    }
+.hero{
 
-    .hero h1 span{
-        margin-left:22px;
-    }
+    padding-bottom:55px;
+}
 
-    .hero-role{
-        font-size:15px;
-        letter-spacing:2px;
-    }
 
-    .hero-sub{
-        font-size:12px;
-    }
+.hero-label{
 
-    .hero-actions{
-        display:grid;
-        grid-template-columns:1fr;
-    }
+    letter-spacing:2px;
 
-    .btn{
-        width:100%;
-    }
+    font-size:8px;
+}
 
-    .hero-photo{
-        height:520px;
-    }
 
-    .section-title{
-        font-size:53px;
-    }
+.hero h1{
 
-    .service{
-        padding:22px 0;
-    }
+    font-size:66px;
 
-    .service-name{
-        font-size:21px;
-    }
+    letter-spacing:-2px;
+}
 
-    .work{
-        min-height:auto;
-    }
 
-    .work-visual,
-    .work-pdf{
-        height:250px;
-    }
+.hero h1 span{
+    margin-left:20px;
+}
 
-    .price-name{
-        padding:13px 8px 13px 0;
-    }
 
-    .price-name strong{
-        font-size:17px;
-    }
+.profession{
 
-    .price-name small{
-        font-size:8px;
-    }
+    font-size:14px;
+}
 
-    .price-value{
-        font-size:17px;
-    }
 
-    .review-text{
-        font-size:19px;
-    }
+.hero-text{
 
-    .faq-question span:first-child{
-        font-size:20px;
-        padding-right:15px;
-    }
+    font-size:11px;
+}
 
-    .faq-answer-inner{
-        padding-right:5px;
-    }
 
-    .contact h2{
-        font-size:56px;
-    }
+.hero-buttons{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+}
+
+
+.button{
+    width:100%;
+}
+
+
+.hero-photo{
+
+    height:535px;
+}
+
+
+.section-title{
+    font-size:52px;
+}
+
+
+.service{
+
+    min-height:auto;
+
+    padding:22px 0;
+}
+
+
+.service-title{
+    font-size:21px;
+}
+
+
+.project-image,
+.project-pdf{
+
+    height:285px;
+}
+
+
+.project-pdf-content strong{
+    font-size:36px;
+}
+
+
+.price-info{
+
+    padding:12px 5px 12px 0;
+}
+
+
+.price-info strong{
+    font-size:17px;
+}
+
+
+.price-number{
+    font-size:17px;
+}
+
+
+.review{
+    padding:28px 23px;
+}
+
+
+.review p{
+    font-size:18px;
+}
+
+
+.question-text{
+
+    font-size:19px;
+
+    padding-right:8px;
+}
+
+
+.faq-answer-content{
+    padding-right:3px;
+}
+
+
+.contact-title{
+    font-size:55px;
+}
+
+
+.contact-details{
+
+    flex-direction:column;
+
+    gap:8px;
+}
+
 
 }
 
 </style>
 </head>
 
+
+
 <body>
 
-<div class="cursor-glow"></div>
+<div class="cursor-light"></div>
 
 
-<!-- ======================================================
+<!-- =====================================================
 NAV
-====================================================== -->
+===================================================== -->
 
-<header class="nav">
+<header class="navigation">
 
 <div class="nav-inner">
 
-<a href="#top" class="logo">
-    <div class="logo-mark">A</div>
-    <div class="logo-text">AMALIA AKHMEDOVA</div>
+<a class="brand" href="#home">
+
+<div class="brand-symbol">
+A
+</div>
+
+<div class="brand-name">
+AMALIA AKHMEDOVA
+</div>
+
 </a>
 
+
 <nav class="menu">
-    <a href="#services">Услуги</a>
-    <a href="#portfolio">Работы</a>
-    <a href="#prices">Стоимость</a>
-    <a href="#reviews">Отзывы</a>
-    <a href="#faq">FAQ</a>
+
+<a href="#services">
+Услуги
+</a>
+
+<a href="#portfolio">
+Работы
+</a>
+
+<a href="#prices">
+Стоимость
+</a>
+
+<a href="#reviews">
+Отзывы
+</a>
+
+<a href="#faq">
+FAQ
+</a>
+
 </nav>
 
-<div class="top-socials">
 
-    <a
-    class="social-circle"
-    href="https://instagram.com/aas.amaliaaa"
-    target="_blank"
-    aria-label="Instagram">
-        IG
-    </a>
+<div class="top-social">
 
-    <a
-    class="social-circle"
-    href="https://t.me/amaliamur"
-    target="_blank"
-    aria-label="Telegram">
-        TG
-    </a>
+
+<a
+href="https://instagram.com/aas.amaliaaa"
+target="_blank"
+class="social-icon">
+
+IG
+
+</a>
+
+
+<a
+href="https://t.me/amaliamur"
+target="_blank"
+class="social-icon">
+
+TG
+
+</a>
+
 
 </div>
 
 </div>
+
 </header>
 
 
-<!-- ======================================================
-HERO
-====================================================== -->
 
-<section class="hero" id="top">
+<!-- =====================================================
+HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+<div class="hero-circle"></div>
+
 
 <div class="container hero-grid">
 
+
 <div class="hero-copy">
 
-    <div class="eyebrow reveal">
-        Graphic Designer • Web Developer
-    </div>
 
-    <h1 class="reveal delay1">
-        Амалия
-        <span>Ахмедова</span>
-    </h1>
+<div class="hero-label reveal">
 
-    <div class="hero-role reveal delay2">
-        UI/UX Specialist ✦ Future Dentist
-    </div>
-
-    <p class="hero-sub reveal delay2">
-        Создаю визуальные решения, в которых эстетика работает
-        вместе со смыслом. Разрабатываю сайты, интерфейсы,
-        айдентику и digital-дизайн — от первой идеи
-        до полностью готового результата.
-    </p>
-
-    <div class="hero-actions reveal delay3">
-
-        <a href="#portfolio" class="btn btn-dark">
-            Смотреть работы
-            <span>↘</span>
-        </a>
-
-        <a href="#contact" class="btn btn-light">
-            Обсудить проект
-        </a>
-
-    </div>
+Graphic Designer • Web Developer
 
 </div>
 
 
-<div class="hero-photo-wrap reveal delay2">
+<h1 class="reveal delay1">
 
-    <div class="hero-photo">
-        <img
-        src="amalia.jpg..jpeg"
-        alt="Амалия Ахмедова">
-    </div>
+Амалия
 
-    <div class="photo-badge">
-        <strong>A</strong>
-        <span>
-            Design<br>
-            Web • UI/UX
-        </span>
-    </div>
+<span>
+Ахмедова
+</span>
+
+</h1>
+
+
+<div class="profession reveal delay2">
+
+UI/UX SPECIALIST ✦ DIGITAL DESIGN
 
 </div>
+
+
+<p class="hero-text reveal delay2">
+
+Создаю сайты, интерфейсы и визуальные системы,
+которые выглядят эстетично, дорого и профессионально.
+Работаю с web-дизайном, айдентикой, digital,
+социальными сетями и многостраничными материалами —
+от первой концепции до полностью готового результата.
+
+</p>
+
+
+<div class="hero-buttons reveal delay3">
+
+
+<a
+href="#portfolio"
+class="button button-black">
+
+Смотреть работы
+
+<span>↘</span>
+
+</a>
+
+
+<a
+href="#contact"
+class="button button-white">
+
+Обсудить проект
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+<!-- PHOTO -->
+
+<div class="hero-photo-holder reveal delay2">
+
+
+<div class="hero-photo">
+
+
+<img
+src="amalia.jpg..jpeg"
+alt="Амалия Ахмедова">
+
+
+</div>
+
+
+<div class="photo-sign">
+
+<strong>
+A
+</strong>
+
+<span>
+Graphic<br>
+Web • UI/UX
+</span>
+
+</div>
+
+
+</div>
+
 
 </div>
 
 </section>
 
 
-<!-- ======================================================
+
+<!-- =====================================================
 MARQUEE
-====================================================== -->
+===================================================== -->
 
 <div class="marquee">
 
 <div class="marquee-track">
 
-<div class="marquee-item">
-WEB DEVELOPMENT <span>✦</span>
-GRAPHIC DESIGN <span>✦</span>
-UI / UX <span>✦</span>
-BRANDING <span>✦</span>
-DIGITAL DESIGN <span>✦</span>
-CREATIVE DIRECTION <span>✦</span>
+
+<div class="marquee-content">
+
+WEB DEVELOPMENT
+
+<i>✦</i>
+
+GRAPHIC DESIGN
+
+<i>✦</i>
+
+UI / UX
+
+<i>✦</i>
+
+BRANDING
+
+<i>✦</i>
+
+SOCIAL MEDIA
+
+<i>✦</i>
+
+EDITORIAL DESIGN
+
+<i>✦</i>
+
+CREATIVE DIRECTION
+
+<i>✦</i>
+
 </div>
 
-<div class="marquee-item">
-WEB DEVELOPMENT <span>✦</span>
-GRAPHIC DESIGN <span>✦</span>
-UI / UX <span>✦</span>
-BRANDING <span>✦</span>
-DIGITAL DESIGN <span>✦</span>
-CREATIVE DIRECTION <span>✦</span>
+
+<div class="marquee-content">
+
+WEB DEVELOPMENT
+
+<i>✦</i>
+
+GRAPHIC DESIGN
+
+<i>✦</i>
+
+UI / UX
+
+<i>✦</i>
+
+BRANDING
+
+<i>✦</i>
+
+SOCIAL MEDIA
+
+<i>✦</i>
+
+EDITORIAL DESIGN
+
+<i>✦</i>
+
+CREATIVE DIRECTION
+
+<i>✦</i>
+
+</div>
+
+
 </div>
 
 </div>
-</div>
 
 
-<!-- ======================================================
+
+<!-- =====================================================
 SERVICES
-====================================================== -->
+===================================================== -->
 
-<section class="section services" id="services">
+<section class="section" id="services">
 
 <div class="container">
 
-<div class="section-head reveal">
+
+<div class="section-heading reveal">
+
 
 <div>
-    <div class="section-label">01 / Expertise</div>
-    <h2 class="section-title">
-        Что я <em>создаю</em>
-    </h2>
+
+<div class="section-number">
+
+01 / Expertise
+
 </div>
 
-<p class="section-note">
-От небольших digital-задач до комплексной разработки.
-Каждый проект собирается индивидуально под задачу,
-а не по готовому шаблону.
+
+<h2 class="section-title">
+
+Мои
+
+<em>
+услуги
+</em>
+
+</h2>
+
+</div>
+
+
+<p class="section-description">
+
+От небольших digital-задач
+до комплексных проектов.
+Каждая работа создаётся
+индивидуально под конкретную задачу.
+
 </p>
 
+
 </div>
+
 
 
 <div class="services-list">
 
-<div class="service reveal">
-<div class="service-num">01</div>
-<div class="service-name">Разработка сайтов</div>
-<div class="service-desc">
-Дизайн, адаптивная верстка, программирование,
-интеграции и подготовка проекта к запуску.
-</div>
-<div class="service-arrow">↗</div>
-</div>
-
 
 <div class="service reveal">
-<div class="service-num">02</div>
-<div class="service-name">UX / UI Design</div>
-<div class="service-desc">
-Интерфейсы, прототипирование, пользовательские сценарии
-и дизайн цифровых продуктов.
-</div>
-<div class="service-arrow">↗</div>
+
+<div class="service-number">
+01
 </div>
 
+<div class="service-title">
+Разработка сайтов
+</div>
 
-<div class="service reveal">
-<div class="service-num">03</div>
-<div class="service-name">E-commerce</div>
-<div class="service-desc">
-Интернет-магазины, каталоги, карточки товаров,
-структура продаж и оформление.
+<div class="service-description">
+
+UX/UI, адаптивная верстка,
+программирование, интеграции
+и подготовка проекта к запуску.
+
 </div>
-<div class="service-arrow">↗</div>
+
+<div class="service-arrow">
+↗
 </div>
+
+</div>
+
 
 
 <div class="service reveal">
-<div class="service-num">04</div>
-<div class="service-name">Чат-боты и воронки</div>
-<div class="service-desc">
-Telegram, Instagram, автоматизация коммуникации
-и пользовательских сценариев.
-</div>
-<div class="service-arrow">↗</div>
+
+<div class="service-number">
+02
 </div>
 
-
-<div class="service reveal">
-<div class="service-num">05</div>
-<div class="service-name">Brand Identity</div>
-<div class="service-desc">
-Логотипы, фирменные системы, палитры,
-типографика и визуальное направление бренда.
-</div>
-<div class="service-arrow">↗</div>
+<div class="service-title">
+UX / UI Design
 </div>
 
+<div class="service-description">
 
-<div class="service reveal">
-<div class="service-num">06</div>
-<div class="service-name">Social Media</div>
-<div class="service-desc">
-Визуальные концепции, публикации, карусели,
-рекламные материалы и оформление аккаунтов.
+Интерфейсы, прототипы,
+пользовательские сценарии
+и digital-продукты.
+
 </div>
-<div class="service-arrow">↗</div>
+
+<div class="service-arrow">
+↗
 </div>
+
+</div>
+
 
 
 <div class="service reveal">
-<div class="service-num">07</div>
-<div class="service-name">Editorial & PDF</div>
-<div class="service-desc">
-Книги, гайды, чек-листы, презентации,
-буклеты и многостраничные материалы.
+
+<div class="service-number">
+03
 </div>
-<div class="service-arrow">↗</div>
+
+<div class="service-title">
+E-commerce
 </div>
+
+<div class="service-description">
+
+Интернет-магазины,
+каталоги, карточки товаров
+и пользовательские сценарии.
+
+</div>
+
+<div class="service-arrow">
+↗
+</div>
+
+</div>
+
 
 
 <div class="service reveal">
-<div class="service-num">08</div>
-<div class="service-name">Print & Advertising</div>
-<div class="service-desc">
-Баннеры, прайсы, визитки, флаеры, сертификаты,
-дипломы, бланки и рекламный дизайн.
+
+<div class="service-number">
+04
 </div>
-<div class="service-arrow">↗</div>
+
+<div class="service-title">
+Чат-боты и воронки
+</div>
+
+<div class="service-description">
+
+Telegram, Instagram,
+автоматизация коммуникации
+и digital-воронки.
+
+</div>
+
+<div class="service-arrow">
+↗
 </div>
 
 </div>
+
+
+
+<div class="service reveal">
+
+<div class="service-number">
+05
 </div>
+
+<div class="service-title">
+Brand Identity
+</div>
+
+<div class="service-description">
+
+Логотипы, палитры,
+типографика и фирменные
+визуальные системы.
+
+</div>
+
+<div class="service-arrow">
+↗
+</div>
+
+</div>
+
+
+
+<div class="service reveal">
+
+<div class="service-number">
+06
+</div>
+
+<div class="service-title">
+Social Media
+</div>
+
+<div class="service-description">
+
+Публикации, карусели,
+визуальные концепции,
+баннеры и рекламные креативы.
+
+</div>
+
+<div class="service-arrow">
+↗
+</div>
+
+</div>
+
+
+
+<div class="service reveal">
+
+<div class="service-number">
+07
+</div>
+
+<div class="service-title">
+Editorial & PDF
+</div>
+
+<div class="service-description">
+
+Книги, буклеты, презентации,
+гайды, чек-листы
+и многостраничные материалы.
+
+</div>
+
+<div class="service-arrow">
+↗
+</div>
+
+</div>
+
+
+
+<div class="service reveal">
+
+<div class="service-number">
+08
+</div>
+
+<div class="service-title">
+Print Design
+</div>
+
+<div class="service-description">
+
+Прайсы, визитки,
+флаеры, сертификаты,
+дипломы и другие материалы.
+
+</div>
+
+<div class="service-arrow">
+↗
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- ======================================================
-PORTFOLIO
-====================================================== -->
 
-<section class="section portfolio" id="portfolio">
+<!-- =====================================================
+PORTFOLIO
+===================================================== -->
+
+<section
+class="section portfolio"
+id="portfolio">
+
 
 <div class="container">
 
-<div class="section-head reveal">
+
+<div class="section-heading reveal">
+
 
 <div>
-<div class="section-label">02 / Selected works</div>
+
+<div class="section-number">
+
+02 / Selected Works
+
+</div>
+
 
 <h2 class="section-title">
-Selected <em>works</em>
+
+Selected
+
+<em>
+works
+</em>
+
 </h2>
+
 </div>
 
-<p class="section-note">
-Выборка проектов из разных направлений:
-web, editorial, medical design, social media
-и коммерческие визуальные решения.
+
+<p class="section-description">
+
+Выборка проектов
+из разных направлений:
+web, editorial, social media,
+medical design и branding.
+
 </p>
 
+
 </div>
 
 
-<div class="works">
+
+<div class="projects">
 
 
-<!-- WEB CASE -->
+<article class="project reveal">
 
-<article class="work reveal">
 
-<div class="work-visual">
-<img src="IMG_0873.PNG" alt="Web design project">
+<div class="project-image">
+
+<img
+src="IMG_0873.PNG"
+alt="Portfolio project">
+
 </div>
 
-<div class="work-info">
-<div class="work-type">Web Development • UI/UX</div>
-<div class="work-title">Коммерческий web-проект</div>
+
+<div class="project-content">
+
+<div class="project-category">
+
+WEB • DIGITAL
+
 </div>
+
+
+<div class="project-name">
+
+Web Development
+
+</div>
+
+</div>
+
 
 </article>
 
 
-<!-- WEB / MOBILE -->
 
-<article class="work reveal delay1">
+<article class="project reveal delay1">
 
-<div class="work-visual">
-<img src="IMG_0874.PNG" alt="Responsive web project">
+
+<div class="project-image">
+
+<img
+src="IMG_0874.PNG"
+alt="Portfolio design">
+
 </div>
 
-<div class="work-info">
-<div class="work-type">Responsive Design</div>
-<div class="work-title">Digital experience</div>
+
+<div class="project-content">
+
+<div class="project-category">
+
+VISUAL DESIGN
+
 </div>
+
+
+<div class="project-name">
+
+Digital Identity
+
+</div>
+
+</div>
+
 
 </article>
 
 
-<!-- MEDICAL -->
 
-<article class="work reveal">
+<article class="project reveal">
 
-<div class="work-visual">
-<img src="IMG_0876.PNG" alt="Medical editorial design">
+
+<div class="project-image">
+
+<img
+src="IMG_0877.PNG"
+alt="UI UX design">
+
 </div>
 
-<div class="work-info">
-<div class="work-type">Medical Editorial • Social Media</div>
-<div class="work-title">
-Educational Medical Content
+
+<div class="project-content">
+
+<div class="project-category">
+
+WEB • UI/UX
+
 </div>
+
+
+<div class="project-name">
+
+Interface Concept
+
 </div>
+
+</div>
+
 
 </article>
 
 
-<!-- MEDICAL PDF -->
 
-<article class="work reveal delay1">
+<article class="project reveal delay1">
 
-<div class="work-pdf">
 
-<div class="pdf-center">
-<span>Editorial Design</span>
-<strong>Medical<br>Content Series</strong>
+<div class="project-image">
+
+<img
+src="IMG_0878.PNG"
+alt="Digital project">
+
+</div>
+
+
+<div class="project-content">
+
+<div class="project-category">
+
+DIGITAL DESIGN
+
+</div>
+
+
+<div class="project-name">
+
+Commercial Visual
+
 </div>
 
 </div>
 
-<div class="work-info">
-<div class="work-type">Publication Series • PDF</div>
-<div class="work-title">
-Визуальная медицинская серия
+
+</article>
+
+
+
+<!-- MEDICAL SERIES -->
+
+<article class="project reveal">
+
+
+<div class="project-pdf">
+
+
+<div class="project-pdf-content">
+
+<small>
+
+MEDICAL EDITORIAL
+
+</small>
+
+
+<strong>
+
+Educational<br>
+Content Series
+
+</strong>
+
 </div>
+
+
 </div>
+
+
+<div class="project-content">
+
+<div class="project-category">
+
+SOCIAL MEDIA • EDITORIAL
+
+</div>
+
+
+<div class="project-name">
+
+Medical Visual System
+
+</div>
+
+</div>
+
 
 <a
-class="work-link"
-href="2 часть неотложка.pdf"
+class="project-link"
+href="Неотложка.pdf"
 target="_blank">
 </a>
 
+
 </article>
+
 
 
 <!-- BOOKLET -->
 
-<article class="work reveal">
+<article class="project reveal delay1">
 
-<div class="work-pdf">
 
-<div class="pdf-center">
-<span>Editorial • Booklet</span>
-<strong>Professional<br>Booklet</strong>
+<div class="project-pdf">
+
+
+<div class="project-pdf-content">
+
+<small>
+
+EDITORIAL • PROFESSIONAL MATERIAL
+
+</small>
+
+
+<strong>
+
+Professional<br>
+Booklet
+
+</strong>
+
+</div>
+
+
+</div>
+
+
+<div class="project-content">
+
+<div class="project-category">
+
+BOOKLET • PRESENTATION
+
+</div>
+
+
+<div class="project-name">
+
+Editorial Publication
+
 </div>
 
 </div>
 
-<div class="work-info">
-<div class="work-type">Booklet • Editorial Design</div>
-<div class="work-title">
-Информационный буклет
-</div>
-</div>
 
 <a
-class="work-link"
-href="Опыт_ведения_пациентов_детского_и_взрослого_возраста_в_разрезе_новых.pdf"
+class="project-link"
+href="Mirza and Aleskerov.pdf"
 target="_blank">
 </a>
+
 
 </article>
 
 
-<!-- PRODUCT -->
-
-<article class="work reveal delay1">
-
-<div class="work-pdf">
-
-<div class="pdf-center">
-<span>Brand • Product</span>
-<strong>Product<br>Presentation</strong>
 </div>
 
 </div>
 
-<div class="work-info">
-<div class="work-type">Presentation • Visual Design</div>
-<div class="work-title">
-Коммерческий дизайн продукта
-</div>
-</div>
-
-<a
-class="work-link"
-href="обложка круг продуктов.pdf"
-target="_blank">
-</a>
-
-</article>
-
-</div>
-</div>
 </section>
 
 
-<!-- ======================================================
+
+<!-- =====================================================
 PRICES
-====================================================== -->
+===================================================== -->
 
-<section class="section prices" id="prices">
+<section
+class="section"
+id="prices">
+
 
 <div class="container">
 
-<div class="section-head reveal">
+
+<div class="section-heading reveal">
+
 
 <div>
-<div class="section-label">03 / Investment</div>
+
+<div class="section-number">
+
+03 / Investment
+
+</div>
+
 
 <h2 class="section-title">
-Стоимость <em>услуг</em>
-</h2>
-</div>
 
-<p class="section-note">
-Финальная стоимость рассчитывается индивидуально
-после обсуждения задачи, объема и сроков проекта.
-</p>
+Стоимость
 
-</div>
+<em>
+услуг
+</em>
 
-
-<div class="price-table reveal">
-
-<div class="price-row header">
-<div class="price-name">Направление</div>
-<div class="price-value">RUB</div>
-<div class="price-value">BYN</div>
-<div class="price-value">USD</div>
-</div>
-
-
-<div class="price-row">
-<div class="price-name">
-<strong>Сайт под ключ</strong>
-<small>UX/UI + верстка + разработка</small>
-</div>
-<div class="price-value">от 25 000 ₽</div>
-<div class="price-value">850 BYN</div>
-<div class="price-value">$280</div>
-</div>
-
-
-<div class="price-row">
-<div class="price-name">
-<strong>UX / UI дизайн</strong>
-<small>Интерфейсы и прототипы</small>
-</div>
-<div class="price-value">от 15 000 ₽</div>
-<div class="price-value">550 BYN</div>
-<div class="price-value">$180</div>
-</div>
-
-
-<div class="price-row">
-<div class="price-name">
-<strong>Интернет-магазины</strong>
-<small>E-commerce проекты</small>
-</div>
-<div class="price-value">от 30 000 ₽</div>
-<div class="price-value">1 050 BYN</div>
-<div class="price-value">$350</div>
-</div>
-
-
-<div class="price-row">
-<div class="price-name">
-<strong>Чат-боты и воронки</strong>
-<small>Telegram / Instagram</small>
-</div>
-<div class="price-value">от 15 000 ₽</div>
-<div class="price-value">550 BYN</div>
-<div class="price-value">$180</div>
-</div>
-
-
-<div class="price-row">
-<div class="price-name">
-<strong>Книги, гайды, PDF</strong>
-<small>Дизайн и верстка</small>
-</div>
-<div class="price-value">от 8 000 ₽</div>
-<div class="price-value">300 BYN</div>
-<div class="price-value">$100</div>
-</div>
-
-
-<div class="price-row">
-<div class="price-name">
-<strong>Презентации</strong>
-<small>Коммерческие и экспертные</small>
-</div>
-<div class="price-value">от 7 000 ₽</div>
-<div class="price-value">250 BYN</div>
-<div class="price-value">$90</div>
-</div>
-
-
-<div class="price-row">
-<div class="price-name">
-<strong>Баннеры и рекламный дизайн</strong>
-<small>Digital и social media</small>
-</div>
-<div class="price-value">от 3 000 ₽</div>
-<div class="price-value">100 BYN</div>
-<div class="price-value">$35</div>
-</div>
-
-
-<div class="price-row">
-<div class="price-name">
-<strong>Логотип и фирменный стиль</strong>
-<small>Айдентика бренда</small>
-</div>
-<div class="price-value">от 15 000 ₽</div>
-<div class="price-value">550 BYN</div>
-<div class="price-value">$180</div>
-</div>
-
-
-<div class="price-row">
-<div class="price-name">
-<strong>Полиграфия</strong>
-<small>Обложки, прайсы, визитки, флаеры</small>
-</div>
-<div class="price-value">от 2 500 ₽</div>
-<div class="price-value">80 BYN</div>
-<div class="price-value">$30</div>
-</div>
-
-</div>
-
-
-<div class="conditions">
-
-<div class="condition reveal">
-<strong>−10%</strong>
-<h4>Для друга</h4>
-<p>
-Приведите знакомого — специальные условия
-действуют для вас обоих.
-</p>
-</div>
-
-<div class="condition reveal delay1">
-<strong>+30%</strong>
-<h4>Срочный проект</h4>
-<p>
-При необходимости перестраиваю рабочий график
-под сокращенный дедлайн.
-</p>
-</div>
-
-<div class="condition reveal delay2">
-<strong>−15%</strong>
-<h4>Постоянным клиентам</h4>
-<p>
-Специальные условия для повторных проектов
-и долгосрочного сотрудничества.
-</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ======================================================
-REVIEWS
-====================================================== -->
-
-<section class="section reviews" id="reviews">
-
-<div class="container">
-
-<div class="section-head reveal">
-
-<div>
-<div class="section-label">04 / Client words</div>
-
-<h2 class="section-title">
-Что говорят <em>клиенты</em>
-</h2>
-</div>
-
-<p class="section-note">
-Для меня важен не только визуальный результат,
-но и сам процесс сотрудничества: понятный,
-спокойный и организованный.
-</p>
-
-</div>
-
-
-<div class="review-grid">
-
-
-<div class="review reveal">
-
-<div class="quote">“</div>
-
-<div class="review-text">
-Нужно было за 2 дня полностью переделать коммерческую
-презентацию для инвесторов. Дедлайны горели, никто не
-брался. Амалия вошла в положение и сдала работу даже
-чуть раньше дедлайна! Дизайн получился пушка —
-стильный, лаконичный, смыслы подчеркнуты идеально.
-</div>
-
-<div class="review-person">
-<strong>Михаил</strong>
-<span>Руководитель агентства • Презентация для бизнеса</span>
-</div>
-
-</div>
-
-
-<div class="review reveal delay1">
-
-<div class="quote">“</div>
-
-<div class="review-text">
-Заказывал у Амалии оформление профиля и дизайн
-чек-листа для Instagram. Всё сделано со вкусом,
-попала в мою эстетику на 100%. Правки вносили быстро,
-хотя их почти и не было. Супер подход к клиентам!
-</div>
-
-<div class="review-person">
-<strong>Артур</strong>
-<span>Блогер • Social Media Design + Guide</span>
-</div>
-
-</div>
-
-
-<div class="review reveal">
-
-<div class="quote">“</div>
-
-<div class="review-text">
-Амалия разработала для моего личного бренда
-потрясающий логотип, подобрала палитру и шрифты.
-Процесс работы очень прозрачный: сначала утвердили
-концепт, потом детали. Вся коммуникация на высоте —
-вежливо, чётко, по делу.
-</div>
-
-<div class="review-person">
-<strong>Елена</strong>
-<span>Коуч • Логотип и фирменный стиль</span>
-</div>
-
-</div>
-
-
-<div class="review reveal delay1">
-
-<div class="quote">“</div>
-
-<div class="review-text">
-Удивительно, как в такой юной девушке сочетается
-столько таланта, профессионализма и эстетического вкуса!
-Она понимает задачу с полуслова, генерирует потрясающие
-идеи и сама пишет код. Результат превзошел все ожидания.
-Теперь все проекты только с ней!
-</div>
-
-<div class="review-person">
-<strong>Ольга</strong>
-<span>Владелица бизнеса • Комплексный дизайн и разработка сайта</span>
-</div>
-
-</div>
-
-</div>
-</div>
-</section>
-
-
-<!-- ======================================================
-FAQ
-====================================================== -->
-
-<section class="section faq" id="faq">
-
-<div class="container">
-
-<div class="section-head reveal">
-
-<div>
-<div class="section-label">05 / FAQ</div>
-
-<h2 class="section-title">
-Частые <em>вопросы</em>
-</h2>
-</div>
-
-<p class="section-note">
-Основные организационные моменты перед началом работы.
-Нажмите на вопрос, чтобы открыть ответ.
-</p>
-
-</div>
-
-
-<div class="faq-wrap">
-
-
-<div class="faq-item reveal">
-
-<button class="faq-question">
-<span>Входит ли верстка и программирование в стоимость сайта?</span>
-<span class="plus">+</span>
-</button>
-
-<div class="faq-answer">
-<div class="faq-answer-inner">
-Да, если вы заказываете услугу «Сайт под ключ».
-Я закрываю полный цикл: от UX/UI-дизайна и прототипа
-до чистой верстки и программирования. Вы получаете
-готовый адаптивный и протестированный сайт,
-подготовленный к запуску.
-</div>
-</div>
-
-</div>
-
-
-<div class="faq-item reveal">
-
-<button class="faq-question">
-<span>Что делать, если проект нужен очень срочно?</span>
-<span class="plus">+</span>
-</button>
-
-<div class="faq-answer">
-<div class="faq-answer-inner">
-Предусмотрена услуга «За срочность» —
-<strong>+30% к стоимости проекта.</strong>
-Мы заранее согласуем сроки, после чего я перестраиваю
-рабочий график и выполняю проект в максимально
-сжатые сроки без намеренного снижения качества.
-</div>
-</div>
-
-</div>
-
-
-<div class="faq-item reveal">
-
-<button class="faq-question">
-<span>Как строится процесс работы и оплаты?</span>
-<span class="plus">+</span>
-</button>
-
-<div class="faq-answer">
-<div class="faq-answer-inner">
-
-Работа проходит поэтапно:
-
-<ol>
-<li><strong>Обсуждение задачи</strong> — бриф и расчет стоимости.</li>
-<li><strong>Предоплата</strong> — обычно 50%.</li>
-<li><strong>Разработка</strong> — последовательное согласование этапов.</li>
-<li><strong>Сдача</strong> — финальная оплата и передача материалов.</li>
-</ol>
-
-</div>
-</div>
-
-</div>
-
-
-<div class="faq-item reveal">
-
-<button class="faq-question">
-<span>Есть ли дополнительные расходы при разработке сайта?</span>
-<span class="plus">+</span>
-</button>
-
-<div class="faq-answer">
-<div class="faq-answer-inner">
-Отдельно могут оплачиваться сторонние сервисы:
-домен, хостинг или тариф выбранной платформы.
-Я помогу подобрать подходящий вариант,
-зарегистрировать его и правильно настроить.
-</div>
-</div>
-
-</div>
-
-
-<div class="faq-item reveal">
-
-<button class="faq-question">
-<span>Предусмотрены ли правки?</span>
-<span class="plus">+</span>
-</button>
-
-<div class="faq-answer">
-<div class="faq-answer-inner">
-В стоимость каждого этапа включено
-<strong>2–3 круга аргументированных правок.</strong>
-Работа утверждается последовательно.
-Дополнительные изменения, выходящие за первоначальное
-техническое задание, рассчитываются отдельно.
-</div>
-</div>
-
-</div>
-
-
-<div class="faq-item reveal">
-
-<button class="faq-question">
-<span>Есть ли скидки и специальные условия?</span>
-<span class="plus">+</span>
-</button>
-
-<div class="faq-answer">
-<div class="faq-answer-inner">
-
-Да:
-
-<ul>
-<li><strong>−10% «Для друга»</strong> — специальные условия для вас и приглашенного клиента.</li>
-<li><strong>−15% постоянным клиентам</strong> — на повторные проекты и долгосрочное сотрудничество.</li>
-</ul>
-
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-</section>
-
-
-<!-- ======================================================
-CONTACT
-====================================================== -->
-
-<section class="contact" id="contact">
-
-<div class="container">
-
-<div class="contact-card reveal">
-
-<div class="contact-small">
-Let’s create something exceptional
-</div>
-
-<h2>
-Обсудим ваш<br>
-<em>проект?</em>
 </h2>
 
-
-<div class="contact-buttons">
-
-<a
-class="contact-btn"
-href="https://instagram.com/aas.amaliaaa"
-target="_blank">
-
-<strong>Instagram</strong>
-<span>@aas.amaliaaa ↗</span>
-
-</a>
+</div>
 
 
-<a
-class="contact-btn"
-href="https://t.me/amaliamur"
-target="_blank">
+<p class="section-description">
 
-<strong>Telegram</strong>
-<span>@amaliamur ↗</span>
+Финальная стоимость
+рассчитывается после обсуждения
+задачи, объема и сроков проекта.
 
-</a>
+</p>
 
-
-<!-- ВАЖНО:
-     Здесь я НЕ ставлю неправильный WhatsApp-номер.
-     После проверки номера заменишь # на ссылку WhatsApp. -->
-
-<a
-class="contact-btn"
-href="#">
-
-<strong>WhatsApp</strong>
-<span>Написать мне ↗</span>
-
-</a>
 
 </div>
 
 
-<div class="email">
-<span>✦</span>
-&nbsp; amaliarabotarb &nbsp;
-<span>✦</span>
-</div>
+
+<div class="price-list reveal">
+
+
+<div class="price heading">
+
+<div class="price-info">
+
+Направление
 
 </div>
+
+
+<div class="price-number">
+RUB
 </div>
-</section>
 
 
-<!-- ======================================================
-FOOTER
-====================================================== -->
+<div class="price-number">
+BYN
+</div>
 
-<footer>
 
-<div class="footer-inner">
+<div class="price-number">
+USD
+</div>
 
-<span>© 2026 AMALIA AKHMEDOVA</span>
+
+</div>
+
+
+
+<div class="price">
+
+
+<div class="price-info">
+
+<strong>
+Сайт под ключ
+</strong>
 
 <span>
-GRAPHIC DESIGN • WEB DEVELOPMENT • UI/UX
+UX/UI + верстка + разработка
 </span>
 
 </div>
 
-</footer>
+
+<div class="price-number">
+25 000 ₽
+</div>
 
 
-<!-- ======================================================
-JS
-====================================================== -->
-
-<script>
-
-/* REVEAL */
-
-const revealElements = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("visible");
-        }
-    });
-},{
-    threshold:.12
-});
-
-revealElements.forEach(el=>observer.observe(el));
+<div class="price-number">
+850 BYN
+</div>
 
 
-/* FAQ */
-
-document.querySelectorAll(".faq-question").forEach(question=>{
-
-    question.addEventListener("click",()=>{
-
-        const item = question.parentElement;
-        const answer = item.querySelector(".faq-answer");
-
-        document.querySelectorAll(".faq-item").forEach(other=>{
-
-            if(other !== item){
-
-                other.classList.remove("active");
-
-                const otherAnswer =
-                other.querySelector(".faq-answer");
-
-                otherAnswer.style.maxHeight = null;
-
-            }
-
-        });
-
-        item.classList.toggle("active");
-
-        if(item.classList.contains("active")){
-
-            answer.style.maxHeight =
-            answer.scrollHeight + "px";
-
-        }else{
-
-            answer.style.maxHeight = null;
-
-        }
-
-    });
-
-});
+<div class="price-number">
+$280
+</div>
 
 
-/* CURSOR GOLD GLOW — ONLY DESKTOP */
-
-const glow = document.querySelector(".cursor-glow");
-
-if(window.matchMedia("(pointer:fine)").matches){
-
-    window.addEventListener("mousemove",(e)=>{
-
-        glow.style.left = e.clientX + "px";
-        glow.style.top = e.clientY + "px";
-
-    });
-
-}else{
-
-    glow.style.display = "none";
-
-}
+</div>
 
 
-/* SUBTLE HERO PARALLAX */
 
-const heroPhoto =
-document.querySelector(".hero-photo img");
+<div class="price">
 
-if(window.matchMedia("(pointer:fine)").matches){
 
-    window.addEventListener("mousemove",(e)=>{
+<div class="price-info">
 
-        const x =
-        (e.clientX / window.innerWidth - .5) * 5;
+<strong>
+UX / UI Design
+</strong>
 
-        const y =
-        (e.clientY / window.innerHeight - .5) * 5;
+<span>
+Интерфейсы и прототипы
+</span>
 
-        heroPhoto.style.transform =
-        `scale(1.025) translate(${x}px,${y}px)`;
+</div>
 
-    });
 
-}
+<div class="price-number">
+15 000 ₽
+</div>
 
-</script>
 
-</body>
-</html>
+<div class="price-number">
+550 BYN
+</div>
+
+
+<div class="price-number">
+$180
+</div>
+
+
+</div>
+
+
+
+<div class="price">
+
+
+<div class="price-info">
+
+<strong>
+E-commerce
+</strong>
+
+<span>
+Интернет-магазины
+</span>
+
+</div>
+
+
+<div class="price-number">
+30 000 ₽
+</div>
+
+
+<div class="price-number">
+1 050 BYN
+</div>
+
+
+<div class="price-number">
+$350
+</div>
+
+
+</div>
+
+
+
+<div class="price">
+
+
+<div class="price-info">
+
+<strong>
+Чат-боты
+</strong>
+
+<span>
+Telegram / Instagram
+</span>
+
+</div>
+
+
+<div class="price-number">
+15 000 ₽
+</div>
+
+
+<div class="price-number">
+550 BYN
+</div>
+
+
+<div class="price-number">
+$180
+</div>
+
+
+</div>
+
+
+
+<div class="price">
+
+
+<div class="price-info">
+
+<strong>
+Books / PDF
+</strong>
+
+<span>
+Дизайн и верстка
+</span>
+
+</div>
+
+
+<div class="price-number">
+8 000 ₽
+</div>
+
+
+<div class="price-number">
+300 BYN
+</div>
+
+
+<div class="price-number">
+$100
+</div>
+
+
+</div>
+
+
+
+<div class="price">
+
+
+<div class="price-info">
+
+<strong>
+Презентации
+</strong>
+
+<span>
+Коммерческие и экспертные
+</span>
+
+</div>
+
+
+<div class="price-number">
+7 000 ₽
+</div>
+
+
+<div class="price-number">
+250 BYN
+</div>
+
+
+<div class="price-number">
+$90
+</div>
+
+
+</div>
+
+
+
+<div class="price">
+
+
+<div class="price-info">
+
+<strong>
+Brand Identity
+</strong>
+
+<span>
+Логотип и фирменный стиль
+</span>
+
+</div>
+
+
+<div class="price-number">
+15 000 ₽
+</div>
+
+
+<div class="price-number">
+550 BYN
+</div>
+
+
+<div class="price-number">
+$180
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="specials">
+
+
+<div class="special reveal">
+
+<strong>
+−10%
+</strong>
+
+<h4>
+Для друга
+</h4>
+
+<p>
+
+Приведите знакомого —
+скидка действует
+для вас обоих.
+
+</p>
+
+</div>
+
+
+
+<div class="special reveal delay1">
+
+<strong>
++30%
+</strong>
+
+<h4>
+Срочность
+</h4>
+
+<p>
+
+Ускоренное выполнение
+проекта при сокращенном
+дедлайне.
+
+</p>
+
+</div>
+
+
+
+<div class="special reveal delay2">
+
+<strong>
+−15%
+</strong>
+
+<h4>
+Постоянным клиентам
+</h4>
+
+<p>
+
+Специальные условия
+для повторных проектов.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+REVIEWS
+===================================================== -->
+
+<section
+class="section reviews-section"
+id="reviews">
+
+
+<div class="container">
+
+
+<div class="section-heading reveal">
+
+
+<div>
+
+<div class="section-number">
+
+04 / Client Words
+
+</div>
+
+
+<h2 class="section-title">
+
+Отзывы
+
+<em>
+клиентов
+</em>
+
+</h2>
+
+</div>
+
+
+<p class="section-description">
+
+О сотрудничестве,
+процессе работы
+и результате
