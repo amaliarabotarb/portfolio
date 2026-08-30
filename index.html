@@ -1,82 +1,1222 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amalia Akhmedova — Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      background: #f7f4ed;
-      color: #071a33;
-      font-family: Arial, sans-serif;
+<title>Амалия Ахмедова — Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#ffffff;
+    color:#071a33;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+}
+
+:root{
+    --navy:#071a33;
+    --gold:#b99655;
+    --light:#f8f7f3;
+    --line:#e8e2d7;
+    --grey:#6d7480;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:78px;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #eee;
+    z-index:1000;
+}
+
+.nav{
+    max-width:1380px;
+    height:100%;
+    margin:auto;
+    padding:0 45px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:Georgia,serif;
+    font-size:23px;
+    letter-spacing:2px;
+    color:var(--navy);
+}
+
+.logo span{
+    color:var(--gold);
+}
+
+nav{
+    display:flex;
+    gap:35px;
+}
+
+nav a{
+    color:var(--navy);
+    text-decoration:none;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    padding:130px 7% 70px;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    align-items:center;
+    max-width:1500px;
+    margin:auto;
+    gap:70px;
+}
+
+.hero-small{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:12px;
+    margin-bottom:24px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-weight:400;
+    font-size:clamp(55px,7vw,105px);
+    line-height:.92;
+    letter-spacing:-4px;
+    color:var(--navy);
+}
+
+.hero h1 i{
+    font-weight:400;
+    color:var(--gold);
+}
+
+.hero-description{
+    max-width:650px;
+    margin-top:32px;
+    color:#59616d;
+    font-size:17px;
+    line-height:1.8;
+}
+
+.hero-prof{
+    margin-top:30px;
+    padding-top:25px;
+    border-top:1px solid var(--line);
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px 25px;
+}
+
+.hero-prof span{
+    font-size:11px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    margin-top:38px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:17px 29px;
+    text-decoration:none;
+    font-size:11px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.btn-dark{
+    background:var(--navy);
+    color:white;
+}
+
+.btn-dark:hover{
+    background:var(--gold);
+}
+
+.btn-light{
+    border:1px solid var(--navy);
+    color:var(--navy);
+}
+
+.btn-light:hover{
+    background:var(--navy);
+    color:white;
+}
+
+/* HERO PHOTO */
+
+.hero-photo{
+    position:relative;
+    display:flex;
+    justify-content:center;
+}
+
+.photo-frame{
+    width:min(100%,520px);
+    position:relative;
+}
+
+.photo-frame:before{
+    content:"";
+    position:absolute;
+    width:90%;
+    height:90%;
+    border:1px solid var(--gold);
+    top:-18px;
+    right:-18px;
+    z-index:-1;
+}
+
+.photo-frame img{
+    width:100%;
+    max-height:690px;
+    object-fit:cover;
+    display:block;
+}
+
+.photo-number{
+    position:absolute;
+    bottom:-28px;
+    left:-30px;
+    background:white;
+    padding:18px 24px;
+    font-family:Georgia,serif;
+    font-size:16px;
+    box-shadow:0 10px 40px rgba(0,0,0,.08);
+}
+
+/* ================= COMMON ================= */
+
+section{
+    padding:110px 7%;
+}
+
+.container{
+    max-width:1380px;
+    margin:auto;
+}
+
+.section-label{
+    color:var(--gold);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    margin-bottom:18px;
+}
+
+.section-title{
+    font-family:Georgia,serif;
+    font-size:clamp(42px,5vw,75px);
+    font-weight:400;
+    line-height:1;
+    letter-spacing:-2px;
+    margin-bottom:55px;
+}
+
+.section-title i{
+    color:var(--gold);
+    font-weight:400;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:var(--navy);
+    color:white;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:100px;
+}
+
+.about .section-title{
+    color:white;
+}
+
+.about-text{
+    font-family:Georgia,serif;
+    font-size:clamp(25px,3vw,43px);
+    line-height:1.35;
+    font-weight:400;
+}
+
+.about-text span{
+    color:#d0ae6a;
+}
+
+.about-right p{
+    color:#cbd0d7;
+    font-size:16px;
+    line-height:1.9;
+    margin-bottom:25px;
+}
+
+.about-facts{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    border-top:1px solid rgba(255,255,255,.2);
+    margin-top:45px;
+}
+
+.fact{
+    padding:25px 10px;
+    border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.fact strong{
+    display:block;
+    color:#d0ae6a;
+    font-family:Georgia,serif;
+    font-size:25px;
+    font-weight:400;
+}
+
+.fact span{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#aaa;
+}
+
+/* ================= SERVICES ================= */
+
+.services-grid{
+    border-top:1px solid var(--line);
+}
+
+.service{
+    display:grid;
+    grid-template-columns:80px 1fr 1fr;
+    gap:30px;
+    padding:34px 0;
+    border-bottom:1px solid var(--line);
+    align-items:center;
+    transition:.3s;
+}
+
+.service:hover{
+    padding-left:15px;
+}
+
+.service-number{
+    color:var(--gold);
+    font-family:Georgia,serif;
+    font-size:17px;
+}
+
+.service h3{
+    font-family:Georgia,serif;
+    font-size:27px;
+    font-weight:400;
+}
+
+.service p{
+    color:var(--grey);
+    line-height:1.6;
+    font-size:14px;
+}
+
+/* ================= WORKS ================= */
+
+.works{
+    background:#faf9f6;
+}
+
+.work-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+}
+
+.work{
+    background:white;
+    padding:14px;
+    transition:.35s;
+    border:1px solid #eeeae2;
+}
+
+.work:hover{
+    transform:translateY(-7px);
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+.work-image{
+    width:100%;
+    height:430px;
+    overflow:hidden;
+    background:#eee;
+}
+
+.work-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.work:hover img{
+    transform:scale(1.025);
+}
+
+.work-info{
+    padding:24px 12px 15px;
+}
+
+.work-category{
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.work h3{
+    font-family:Georgia,serif;
+    font-size:28px;
+    font-weight:400;
+    margin:10px 0;
+}
+
+.work p{
+    color:#737985;
+    line-height:1.6;
+    font-size:13px;
+}
+
+/* ================= MEDICAL ================= */
+
+.medical{
+    background:white;
+}
+
+.medical-box{
+    background:var(--navy);
+    padding:65px;
+    color:white;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.medical-box h3{
+    font-family:Georgia,serif;
+    font-size:45px;
+    font-weight:400;
+    margin-bottom:25px;
+}
+
+.medical-box p{
+    color:#c7ccd3;
+    line-height:1.8;
+}
+
+.pdf-list{
+    display:flex;
+    flex-direction:column;
+}
+
+.pdf-link{
+    color:white;
+    text-decoration:none;
+    border-top:1px solid rgba(255,255,255,.18);
+    padding:19px 5px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:.3s;
+}
+
+.pdf-link:last-child{
+    border-bottom:1px solid rgba(255,255,255,.18);
+}
+
+.pdf-link:hover{
+    color:#d0ae6a;
+    padding-left:12px;
+}
+
+.pdf-link span{
+    color:#d0ae6a;
+}
+
+/* ================= PRICE ================= */
+
+.price{
+    background:#fff;
+}
+
+.price-note{
+    max-width:650px;
+    color:#707783;
+    line-height:1.8;
+    margin-top:-30px;
+    margin-bottom:45px;
+}
+
+.price-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.price-table tr{
+    border-bottom:1px solid var(--line);
+}
+
+.price-table tr:first-child{
+    border-top:1px solid var(--line);
+}
+
+.price-table td{
+    padding:25px 10px;
+}
+
+.price-name{
+    font-family:Georgia,serif;
+    font-size:21px;
+}
+
+.price-value{
+    text-align:right;
+    font-weight:600;
+    white-space:nowrap;
+}
+
+.price-value span{
+    color:var(--gold);
+}
+
+.conditions{
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.condition{
+    background:var(--light);
+    padding:27px 22px;
+    min-height:135px;
+}
+
+.condition strong{
+    display:block;
+    font-family:Georgia,serif;
+    font-size:22px;
+    color:var(--gold);
+    margin-bottom:10px;
+}
+
+.condition p{
+    font-size:12px;
+    line-height:1.6;
+    color:#69717b;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    background:var(--navy);
+    color:white;
+    text-align:center;
+}
+
+.contact .section-label{
+    color:#d0ae6a;
+}
+
+.contact h2{
+    font-family:Georgia,serif;
+    font-size:clamp(50px,7vw,100px);
+    font-weight:400;
+    line-height:1;
+    max-width:1000px;
+    margin:0 auto 40px;
+}
+
+.contact h2 i{
+    color:#d0ae6a;
+    font-weight:400;
+}
+
+.contact p{
+    color:#aeb5bf;
+    max-width:600px;
+    margin:0 auto 40px;
+    line-height:1.8;
+}
+
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:13px;
+}
+
+.contact-buttons a{
+    color:white;
+    text-decoration:none;
+    padding:17px 30px;
+    border:1px solid rgba(255,255,255,.4);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    transition:.3s;
+}
+
+.contact-buttons a:hover{
+    background:white;
+    color:var(--navy);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#041426;
+    color:#788391;
+    padding:25px 7%;
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+.footer-inner{
+    max-width:1380px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    header{
+        height:65px;
     }
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px;
-      box-sizing: border-box;
+    .nav{
+        padding:0 20px;
     }
 
-    h1 {
-      margin: 0;
-      font-family: Georgia, serif;
-      font-size: clamp(54px, 9vw, 140px);
-      font-weight: 400;
-      letter-spacing: 4px;
+    nav{
+        display:none;
     }
 
-    .gold {
-      color: #b9924a;
+    .logo{
+        font-size:18px;
     }
 
-    p {
-      margin-top: 24px;
-      font-size: 18px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
+    .hero{
+        grid-template-columns:1fr;
+        padding:110px 22px 70px;
+        gap:65px;
     }
 
-    .button {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 16px 34px;
-      border: 1px solid #b9924a;
-      color: #071a33;
-      text-decoration: none;
-      transition: .3s;
+    .hero h1{
+        font-size:57px;
+        letter-spacing:-3px;
     }
 
-    .button:hover {
-      background: #071a33;
-      color: white;
+    .hero-description{
+        font-size:15px;
     }
-  </style>
+
+    .hero-photo{
+        padding:0 10px;
+    }
+
+    .photo-frame:before{
+        right:-10px;
+        top:-10px;
+    }
+
+    section{
+        padding:80px 22px;
+    }
+
+    .section-title{
+        margin-bottom:38px;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .service{
+        grid-template-columns:45px 1fr;
+        gap:10px;
+    }
+
+    .service p{
+        grid-column:2;
+    }
+
+    .work-grid{
+        grid-template-columns:1fr;
+    }
+
+    .work-image{
+        height:auto;
+        aspect-ratio:1/1;
+    }
+
+    .medical-box{
+        padding:35px 22px;
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .medical-box h3{
+        font-size:34px;
+    }
+
+    .conditions{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .price-table td{
+        padding:20px 4px;
+    }
+
+    .price-name{
+        font-size:16px;
+        padding-right:15px !important;
+    }
+
+    .price-value{
+        font-size:12px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        gap:10px;
+    }
+}
+
+@media(max-width:500px){
+    .conditions{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:49px;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-<section class="hero">
-  <div>
+<header>
+<div class="nav">
+    <div class="logo">AMALIA <span>AKHMEDOVA</span></div>
+
+    <nav>
+        <a href="#about">Обо мне</a>
+        <a href="#services">Услуги</a>
+        <a href="#works">Работы</a>
+        <a href="#price">Стоимость</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+</div>
+</header>
+
+
+<!-- HERO -->
+
+<main class="hero">
+
+<div>
+    <div class="hero-small">Portfolio · Graphic & Web Design</div>
+
     <h1>
-      AMALIA<br>
-      <span class="gold">AKHMEDOVA</span>
+        Амалия<br>
+        <i>Ахмедова</i>
     </h1>
 
-    <p>
-      Graphic Designer & Web Developer ✦ UI/UX Specialist ✦ Future Dentist
+    <p class="hero-description">
+        Создаю визуальные решения для бизнеса, экспертов и брендов —
+        от айдентики и графического дизайна до сайтов,
+        интерфейсов и цифровых продуктов.
     </p>
 
-    <a class="button" href="#portfolio">
-      Смотреть работы
-    </a>
-  </div>
+    <div class="hero-prof">
+        <span>Graphic Designer</span>
+        <span>Web Developer</span>
+        <span>UI/UX Specialist</span>
+        <span>Future Dentist</span>
+    </div>
+
+    <div class="buttons">
+        <a href="#works" class="btn btn-dark">Смотреть работы</a>
+        <a href="#contact" class="btn btn-light">Обсудить проект</a>
+    </div>
+</div>
+
+<div class="hero-photo">
+    <div class="photo-frame">
+        <img src="amalia.jpg.jpeg" alt="Амалия Ахмедова">
+        <div class="photo-number">Graphic · Web · UI/UX</div>
+    </div>
+</div>
+
+</main>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+<div class="container">
+
+<div class="section-label">01 · Обо мне</div>
+
+<div class="about-grid">
+
+<div>
+    <h2 class="section-title">
+        Дизайн, который<br><i>работает.</i>
+    </h2>
+
+    <div class="about-text">
+        Соединяю <span>эстетику</span>,
+        структуру и технологии
+        в одном проекте.
+    </div>
+</div>
+
+<div class="about-right">
+
+    <p>
+        Работаю с графическим и веб-дизайном, создаю сайты,
+        интерфейсы, рекламные материалы, презентации,
+        фирменный стиль и цифровые продукты.
+    </p>
+
+    <p>
+        Для меня важен не только красивый визуал:
+        проект должен быть понятным, функциональным,
+        аккуратным и соответствовать задачам клиента.
+    </p>
+
+    <div class="about-facts">
+
+        <div class="fact">
+            <strong>RU · BY</strong>
+            <span>Работа с проектами</span>
+        </div>
+
+        <div class="fact">
+            <strong>Full cycle</strong>
+            <span>От идеи до реализации</span>
+        </div>
+
+        <div class="fact">
+            <strong>Digital</strong>
+            <span>Web · UI/UX · Graphic</span>
+        </div>
+
+        <div class="fact">
+            <strong>Support</strong>
+            <span>Поддержка после сдачи</span>
+        </div>
+
+    </div>
+</div>
+
+</div>
+</div>
 </section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+<div class="container">
+
+<div class="section-label">02 · Направления</div>
+
+<h2 class="section-title">
+    Что я <i>создаю</i>
+</h2>
+
+<div class="services-grid">
+
+<div class="service">
+    <div class="service-number">01</div>
+    <h3>Сайты и Web Development</h3>
+    <p>Лендинги, многостраничные сайты, адаптивная верстка, кодирование и интеграции.</p>
+</div>
+
+<div class="service">
+    <div class="service-number">02</div>
+    <h3>UI/UX и приложения</h3>
+    <p>Структура, интерфейсы, пользовательские сценарии и визуальный дизайн цифровых продуктов.</p>
+</div>
+
+<div class="service">
+    <div class="service-number">03</div>
+    <h3>Интернет-магазины</h3>
+    <p>Дизайн и разработка e-commerce проектов, каталогов и продающих страниц.</p>
+</div>
+
+<div class="service">
+    <div class="service-number">04</div>
+    <h3>Чат-боты и воронки</h3>
+    <p>Логика автоматических коммуникаций, сценарии, кнопки, переходы и цифровые воронки.</p>
+</div>
+
+<div class="service">
+    <div class="service-number">05</div>
+    <h3>Логотипы и айдентика</h3>
+    <p>Логотип, визуальная система бренда, фирменные элементы и оформление.</p>
+</div>
+
+<div class="service">
+    <div class="service-number">06</div>
+    <h3>Книги, гайды и PDF</h3>
+    <p>Верстка, обложки, электронные материалы, рабочие тетради и информационные продукты.</p>
+</div>
+
+<div class="service">
+    <div class="service-number">07</div>
+    <h3>Презентации</h3>
+    <p>Коммерческие, образовательные и экспертные презентации с продуманной визуальной системой.</p>
+</div>
+
+<div class="service">
+    <div class="service-number">08</div>
+    <h3>Рекламный дизайн</h3>
+    <p>Баннеры, рекламные креативы, оформление социальных сетей и визуалы для продвижения.</p>
+</div>
+
+<div class="service">
+    <div class="service-number">09</div>
+    <h3>Полиграфия</h3>
+    <p>Прайсы, визитки, флаеры, буклеты, сертификаты, дипломы, бланки и другие материалы.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PORTFOLIO -->
+
+<section class="works" id="works">
+<div class="container">
+
+<div class="section-label">03 · Selected works</div>
+
+<h2 class="section-title">
+    Избранные <i>проекты</i>
+</h2>
+
+<div class="work-grid">
+
+<div class="work">
+    <div class="work-image">
+        <img src="IMG_0877.PNG" alt="Web Design">
+    </div>
+    <div class="work-info">
+        <div class="work-category">Web Design · Development</div>
+        <h3>Digital Web Project</h3>
+        <p>Структура, дизайн интерфейса и визуальная система веб-проекта.</p>
+    </div>
+</div>
+
+<div class="work">
+    <div class="work-image">
+        <img src="IMG_0878.PNG" alt="Web project">
+    </div>
+    <div class="work-info">
+        <div class="work-category">Website · UI/UX</div>
+        <h3>Premium Website</h3>
+        <p>Минималистичный интерфейс, визуальная иерархия и адаптивная структура.</p>
+    </div>
+</div>
+
+<div class="work">
+    <div class="work-image">
+        <img src="IMG_0879.PNG" alt="Website">
+    </div>
+    <div class="work-info">
+        <div class="work-category">Web · Hospitality</div>
+        <h3>Hospitality Concept</h3>
+        <p>Веб-концепция с акцентом на атмосферу, контент и удобство пользователя.</p>
+    </div>
+</div>
+
+<div class="work">
+    <div class="work-image">
+        <img src="IMG_0880.PNG" alt="Interface">
+    </div>
+    <div class="work-info">
+        <div class="work-category">UI/UX · Interface</div>
+        <h3>Digital Interface</h3>
+        <p>Современная визуальная система и продуманная структура интерфейса.</p>
+    </div>
+</div>
+
+<div class="work">
+    <div class="work-image">
+        <img src="IMG_0882.PNG" alt="Brand identity">
+    </div>
+    <div class="work-info">
+        <div class="work-category">Branding · Identity</div>
+        <h3>Visual Identity</h3>
+        <p>Концепция фирменного стиля и визуальная упаковка бренда.</p>
+    </div>
+</div>
+
+<div class="work">
+    <div class="work-image">
+        <img src="IMG_0883.PNG" alt="Graphic design">
+    </div>
+    <div class="work-info">
+        <div class="work-category">Graphic · Editorial</div>
+        <h3>Editorial Design</h3>
+        <p>Графическое оформление печатных и цифровых материалов.</p>
+    </div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- MEDICAL -->
+
+<section class="medical">
+<div class="container">
+
+<div class="section-label">04 · Medical Design</div>
+
+<h2 class="section-title">
+    Медицинский <i>дизайн</i>
+</h2>
+
+<div class="medical-box">
+
+<div>
+    <h3>Medical Visual Systems</h3>
+
+    <p>
+        Отдельное направление портфолио — медицинские
+        образовательные материалы, инфографика,
+        алгоритмы и визуальная упаковка профессионального контента.
+    </p>
+</div>
+
+<div class="pdf-list">
+
+    <a class="pdf-link" href="Неотложка.pdf" target="_blank">
+        Неотложная помощь
+        <span>↗</span>
+    </a>
+
+    <a class="pdf-link" href="2 часть неотложка.pdf" target="_blank">
+        Неотложная помощь · Часть II
+        <span>↗</span>
+    </a>
+
+    <a class="pdf-link" href="неотложка 3.pdf" target="_blank">
+        Неотложная помощь · Часть III
+        <span>↗</span>
+    </a>
+
+    <a class="pdf-link" href="Mirza and Aleskerov.pdf" target="_blank">
+        Mirza & Aleskerov
+        <span>↗</span>
+    </a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PRICE -->
+
+<section class="price" id="price">
+<div class="container">
+
+<div class="section-label">05 · Стоимость</div>
+
+<h2 class="section-title">
+    Стоимость <i>услуг</i>
+</h2>
+
+<p class="price-note">
+    Финальная стоимость рассчитывается индивидуально
+    после обсуждения задачи, объёма работы и сроков.
+</p>
+
+<table class="price-table">
+
+<tr>
+<td class="price-name">Разработка сайта под ключ</td>
+<td class="price-value">от <span>25 000 ₽</span> · 850 BYN · $280</td>
+</tr>
+
+<tr>
+<td class="price-name">UI/UX дизайн и приложения</td>
+<td class="price-value">от <span>15 000 ₽</span> · 550 BYN · $180</td>
+</tr>
+
+<tr>
+<td class="price-name">Интернет-магазин / e-commerce</td>
+<td class="price-value">от <span>30 000 ₽</span> · 1 050 BYN · $350</td>
+</tr>
+
+<tr>
+<td class="price-name">Чат-боты и воронки</td>
+<td class="price-value">от <span>15 000 ₽</span> · 550 BYN · $180</td>
+</tr>
+
+<tr>
+<td class="price-name">Книги, гайды и PDF</td>
+<td class="price-value">от <span>8 000 ₽</span> · 300 BYN · $100</td>
+</tr>
+
+<tr>
+<td class="price-name">Презентации</td>
+<td class="price-value">от <span>7 000 ₽</span> · 250 BYN · $90</td>
+</tr>
+
+<tr>
+<td class="price-name">Баннеры и рекламный дизайн</td>
+<td class="price-value">от <span>3 000 ₽</span> · 100 BYN · $35</td>
+</tr>
+
+<tr>
+<td class="price-name">Логотип и фирменный стиль</td>
+<td class="price-value">от <span>15 000 ₽</span> · 550 BYN · $180</td>
+</tr>
+
+<tr>
+<td class="price-name">Обложки, прайсы, визитки, флаеры</td>
+<td class="price-value">от <span>2 500 ₽</span> · 80 BYN · $30</td>
+</tr>
+
+<tr>
+<td class="price-name">Сертификаты, дипломы, бланки</td>
+<td class="price-value">от <span>2 000 ₽</span> · 70 BYN · $25</td>
+</tr>
+
+<tr>
+<td class="price-name">Упаковка бренда / айдентика</td>
+<td class="price-value">от <span>10 000 ₽</span> · 350 BYN · $120</td>
+</tr>
+
+</table>
+
+
+<div class="conditions">
+
+<div class="condition">
+<strong>−10%</strong>
+<p>Тебе и другу при рекомендации.</p>
+</div>
+
+<div class="condition">
+<strong>−15%</strong>
+<p>Специальные условия для постоянных клиентов.</p>
+</div>
+
+<div class="condition">
+<strong>−10%</strong>
+<p>При раннем бронировании проекта.</p>
+</div>
+
+<div class="condition">
+<strong>+30%</strong>
+<p>При срочном выполнении проекта в сжатые сроки.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+<div class="container">
+
+<div class="section-label">06 · Contact</div>
+
+<h2>
+    Есть проект?<br>
+    <i>Давайте обсудим.</i>
+</h2>
+
+<p>
+    Расскажите мне о задаче — я помогу определить
+    подходящий формат работы и предложу решение.
+</p>
+
+<div class="contact-buttons">
+
+<a href="https://instagram.com/aas.amaliaaa" target="_blank">
+Instagram · aas.amaliaaa
+</a>
+
+<a href="https://t.me/amaliamur" target="_blank">
+Telegram · @amaliamur
+</a>
+
+</div>
+
+</div>
+</section>
+
+
+<footer>
+<div class="footer-inner">
+<span>© 2026 AMALIA AKHMEDOVA</span>
+<span>GRAPHIC DESIGN · WEB DEVELOPMENT · UI/UX</span>
+</div>
+</footer>
 
 </body>
 </html>
